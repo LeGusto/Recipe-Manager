@@ -1,0 +1,10 @@
+-I
+/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug
+-I
+/usr/lib/qml
+--resource
+/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/.qt/rcc/qmake_Recipe-Manager.qrc
+--resource
+/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/.qt/rcc/appRecipe-Manager_raw_qml_0.qrc
+--module
+Recipe-Manager

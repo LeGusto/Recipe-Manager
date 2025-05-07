@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="/qt/qml/Recipe-Manager">/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/Recipe-Manager</file>
+
+  </qresource>
+</RCC>

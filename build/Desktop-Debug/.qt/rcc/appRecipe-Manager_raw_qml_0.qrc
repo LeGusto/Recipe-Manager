@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="/qt/qml/Recipe-Manager/">
+    <file alias="Login.qml">/home/LeGusto/Documents/Recipe-Manager/Login.qml</file>
+    <file alias="Main.qml">/home/LeGusto/Documents/Recipe-Manager/Main.qml</file>
+    <file alias="Start.qml">/home/LeGusto/Documents/Recipe-Manager/Start.qml</file>
+    <file alias="Signup.qml">/home/LeGusto/Documents/Recipe-Manager/Signup.qml</file>
+  </qresource>
+</RCC>
+

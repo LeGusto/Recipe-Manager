@@ -1,0 +1,36 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 27,
+                        "durationMicroseconds": 91,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 10
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 24,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"clicked\".",
+                        "functionName": "onClicked",
+                        "line": 17
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 24,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"clicked\".",
+                        "functionName": "onClicked",
+                        "line": 25
+                    }
+                ],
+                "filepath": "/home/LeGusto/Documents/Recipe-Manager/Start.qml"
+            }
+        ],
+        "moduleId": "Recipe-Manager(appRecipe-Manager)"
+    }
+]

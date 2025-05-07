@@ -1,0 +1,14 @@
+-rootPath
+/home/LeGusto/Documents/Recipe-Manager
+-cmake-output
+-output-file
+/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/.qt/qml_imports/appRecipe-Manager_conf.cmake
+-importPath
+/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/Recipe-Manager
+-importPath
+/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug
+-importPath
+/usr/lib/qml
+-qrcFiles
+/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/.qt/rcc/qmake_Recipe-Manager.qrc
+/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/.qt/rcc/appRecipe-Manager_raw_qml_0.qrc
