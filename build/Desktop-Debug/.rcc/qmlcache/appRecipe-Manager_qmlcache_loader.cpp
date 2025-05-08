@@ -5,13 +5,6 @@
 #include <QtCore/qstring.h>
 
 namespace QmlCacheGeneratedCode {
-namespace _qt_qml_Recipe_0x2d_Manager_Login_qml { 
-    extern const unsigned char qmlData[];
-    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
-    const QQmlPrivate::CachedQmlUnit unit = {
-        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
-    };
-}
 namespace _qt_qml_Recipe_0x2d_Manager_Main_qml { 
     extern const unsigned char qmlData[];
     extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
@@ -19,14 +12,21 @@ namespace _qt_qml_Recipe_0x2d_Manager_Main_qml {
         reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
     };
 }
-namespace _qt_qml_Recipe_0x2d_Manager_Start_qml { 
+namespace _qt_qml_Recipe_0x2d_Manager_Signup_qml { 
     extern const unsigned char qmlData[];
     extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
     const QQmlPrivate::CachedQmlUnit unit = {
         reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
     };
 }
-namespace _qt_qml_Recipe_0x2d_Manager_Signup_qml { 
+namespace _qt_qml_Recipe_0x2d_Manager_Login_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
+namespace _qt_qml_Recipe_0x2d_Manager_Start_qml { 
     extern const unsigned char qmlData[];
     extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
     const QQmlPrivate::CachedQmlUnit unit = {
@@ -47,10 +47,10 @@ Q_GLOBAL_STATIC(Registry, unitRegistry)
 
 
 Registry::Registry() {
-    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/Recipe-Manager/Login.qml"), &QmlCacheGeneratedCode::_qt_qml_Recipe_0x2d_Manager_Login_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/Recipe-Manager/Main.qml"), &QmlCacheGeneratedCode::_qt_qml_Recipe_0x2d_Manager_Main_qml::unit);
-    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/Recipe-Manager/Start.qml"), &QmlCacheGeneratedCode::_qt_qml_Recipe_0x2d_Manager_Start_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/Recipe-Manager/Signup.qml"), &QmlCacheGeneratedCode::_qt_qml_Recipe_0x2d_Manager_Signup_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/Recipe-Manager/Login.qml"), &QmlCacheGeneratedCode::_qt_qml_Recipe_0x2d_Manager_Login_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/Recipe-Manager/Start.qml"), &QmlCacheGeneratedCode::_qt_qml_Recipe_0x2d_Manager_Start_qml::unit);
     QQmlPrivate::RegisterQmlUnitCacheHook registration;
     registration.structVersion = 0;
     registration.lookupCachedQmlUnit = &lookupCachedUnit;

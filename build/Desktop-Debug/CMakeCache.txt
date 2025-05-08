@@ -424,6 +424,15 @@ XKB_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libxkbcommon.so
 //Path to a library.
 pkgcfg_lib_PKG_XKB_xkbcommon:FILEPATH=/usr/lib/x86_64-linux-gnu/libxkbcommon.so
 
+//Value Computed by CMake
+tester_BINARY_DIR:STATIC=/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug
+
+//Value Computed by CMake
+tester_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+tester_SOURCE_DIR:STATIC=/home/LeGusto/Documents/Recipe-Manager
+
 
 ########################
 # INTERNAL cache entries

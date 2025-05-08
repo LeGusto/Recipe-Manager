@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 16,
-                        "durationMicroseconds": 111,
+                        "durationMicroseconds": 164,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 14
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 37,
+                        "durationMicroseconds": 73,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 12
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 54,
+                        "durationMicroseconds": 99,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 19
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 48,
+                        "durationMicroseconds": 119,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 25
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 48,
+                        "durationMicroseconds": 290,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 29
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 45,
+                        "durationMicroseconds": 178,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 40
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 44,
+                        "durationMicroseconds": 131,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 46

@@ -1,8 +1,8 @@
 module Recipe-Manager
 typeinfo appRecipe-Manager.qmltypes
 prefer :/qt/qml/Recipe-Manager/
-Login 1.0 Login.qml
 Main 1.0 Main.qml
-Start 1.0 Start.qml
 Signup 1.0 Signup.qml
+Login 1.0 Login.qml
+Start 1.0 Start.qml
 

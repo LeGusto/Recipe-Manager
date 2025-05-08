@@ -2,7 +2,7 @@
 /home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/.qt/rcc/qmake_Recipe-Manager.qrc
 --resource
 /home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/.qt/rcc/appRecipe-Manager_raw_qml_0.qrc
-/qt/qml/Recipe-Manager/Login.qml
 /qt/qml/Recipe-Manager/Main.qml
-/qt/qml/Recipe-Manager/Start.qml
 /qt/qml/Recipe-Manager/Signup.qml
+/qt/qml/Recipe-Manager/Login.qml
+/qt/qml/Recipe-Manager/Start.qml
