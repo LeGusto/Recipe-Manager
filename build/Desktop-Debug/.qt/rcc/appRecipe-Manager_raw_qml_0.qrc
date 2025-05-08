@@ -4,6 +4,7 @@
     <file alias="Signup.qml">/home/LeGusto/Documents/Recipe-Manager/Signup.qml</file>
     <file alias="Login.qml">/home/LeGusto/Documents/Recipe-Manager/Login.qml</file>
     <file alias="Start.qml">/home/LeGusto/Documents/Recipe-Manager/Start.qml</file>
+    <file alias="Recipes.qml">/home/LeGusto/Documents/Recipe-Manager/Recipes.qml</file>
   </qresource>
 </RCC>
 

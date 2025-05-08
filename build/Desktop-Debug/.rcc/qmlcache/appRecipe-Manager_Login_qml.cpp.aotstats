@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 16,
-                        "durationMicroseconds": 164,
+                        "durationMicroseconds": 157,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 14
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 73,
+                        "durationMicroseconds": 65,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 12
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 99,
+                        "durationMicroseconds": 97,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 19
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 119,
+                        "durationMicroseconds": 78,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 25
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 290,
+                        "durationMicroseconds": 98,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 29
@@ -62,18 +62,26 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 178,
+                        "durationMicroseconds": 78,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 40
                     },
                     {
+                        "codegenSuccessfull": false,
+                        "column": 28,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"clicked\".",
+                        "functionName": "onClicked",
+                        "line": 47
+                    },
+                    {
                         "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 131,
+                        "durationMicroseconds": 104,
                         "errorMessage": "",
                         "functionName": "alignment",
-                        "line": 46
+                        "line": 52
                     }
                 ],
                 "filepath": "/home/LeGusto/Documents/Recipe-Manager/Login.qml"

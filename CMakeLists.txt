@@ -20,6 +20,8 @@ qt_add_qml_module(appRecipe-Manager
         QML_FILES Signup.qml
         QML_FILES Login.qml
         QML_FILES Start.qml
+        QML_FILES Recipes.qml
+        QML_FILES
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
@@ -43,3 +45,4 @@ install(TARGETS appRecipe-Manager
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
+

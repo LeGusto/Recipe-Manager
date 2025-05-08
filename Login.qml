@@ -43,6 +43,12 @@ Page {
             Button {
                 id: loginButton
                 text: "Login"
+
+                onClicked: {
+                    stackView.replace("Recipes.qml");
+                }
+
+
                 Layout.alignment: Qt.AlignHCenter
             }
         }
