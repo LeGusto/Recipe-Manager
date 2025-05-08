@@ -2,10 +2,8 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 
 Page {
-
     title: "Recipe Cards"
 
-    // Sample recipe data
     ListModel {
         id: recipeModel
         ListElement {
@@ -18,60 +16,79 @@ Page {
             prepTime: "20 mins"
             ingredients: "Broccoli, carrots, bell peppers, soy sauce"
         }
-        // Add more recipes as needed
     }
 
-    Flickable {
+    ListView {
+        id: recipeListView
         anchors.fill: parent
+        model: recipeModel
+        spacing: 10
+        clip: true
+        boundsBehavior: Flickable.StopAtBounds
 
-        Column {
-            width: parent.width
-            spacing: 10
-            padding: 15
 
-            // Generate cards using Repeater
-            Repeater {
-                model: recipeModel
+        header: Item { height: 15 }
 
-                Rectangle {
-                    width: parent.width - 30
-                    height: 120
-                    radius: 8
-                    color: "white"
-                    border.color: "#e0e0e0"
+        delegate: Item {
+            width: ListView.view.width
+            height: 120
 
-                    Column {
-                        anchors.fill: parent
-                        anchors.margins: 10
-                        spacing: 5
+            Rectangle {
+                width: parent.width - 30
+                height: parent.height
+                radius: 8
+                color: "white"
+                border.color: "#e0e0e0"
+                anchors.horizontalCenter: parent.horizontalCenter
 
-                        Text {
-                            text: name
-                            font.bold: true
-                            font.pixelSize: 18
-                        }
 
-                        Text {
-                            text: "⏱ " + prepTime
-                            font.pixelSize: 14
-                            color: "gray"
-                        }
+                Column {
+                    anchors.fill: parent
+                    anchors.margins: 10
+                    spacing: 5
 
-                        Text {
-                            width: parent.width
-                            text: "🍴 " + ingredients
-                            font.pixelSize: 14
-                            wrapMode: Text.WordWrap
-                        }
+                    Text {
+                        text: name
+                        font.bold: true
+                        font.pixelSize: 18
                     }
 
-                    // Make it clickable
-                    MouseArea {
-                        anchors.fill: parent
-                        onClicked: console.log("Selected:", name)
+                    Text {
+                        text: "⏱ " + prepTime
+                        font.pixelSize: 14
+                        color: "gray"
+                    }
+
+                    Text {
+                        width: parent.width
+                        text: "🍴 " + ingredients
+                        font.pixelSize: 14
+                        wrapMode: Text.WordWrap
                     }
                 }
+
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: console.log("Selected:", name)
+                }
+
             }
+        }
+    }
+
+    footer: Button {
+        width: recipeListView.width - 30
+        height: 50
+        x: (recipeListView.width - width) / 2
+
+        text: "Add New Recipe"
+        onClicked: {
+            recipeModel.append({
+                name: "New Recipe",
+                prepTime: "0 mins",
+                ingredients: "ingredients"
+            })
+            recipeListView.positionViewAtEnd()
         }
     }
 }
