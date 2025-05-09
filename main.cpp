@@ -1,9 +1,12 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <databasehandler.h>
 
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
+
+    databaseHandler dbhandler;
 
     QQmlApplicationEngine engine;
     QObject::connect(

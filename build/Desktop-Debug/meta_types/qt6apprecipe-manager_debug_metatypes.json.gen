@@ -1,2 +1,28 @@
 [
+    {
+        "classes": [
+            {
+                "className": "databaseHandler",
+                "lineNumber": 8,
+                "object": true,
+                "qualifiedClassName": "databaseHandler",
+                "slots": [
+                    {
+                        "access": "public",
+                        "index": 0,
+                        "name": "networkReplyReadyRead",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "databasehandler.h",
+        "outputRevision": 68
+    }
 ]

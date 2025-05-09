@@ -1063,7 +1063,15 @@
 	"CROSS_CONFIG" : false,
 	"DEP_FILE" : "/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/appRecipe-Manager_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "appRecipe-Manager_autogen/timestamp",
-	"HEADERS" : [],
+	"HEADERS" : 
+	[
+		[
+			"/home/LeGusto/Documents/Recipe-Manager/databasehandler.h",
+			"MU",
+			"EWIEGA46WW/moc_databasehandler.cpp",
+			null
+		]
+	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/appRecipe-Manager_autogen/include",
 	"MOC_COMPILATION_FILE" : "/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/appRecipe-Manager_autogen/mocs_compilation.cpp",
@@ -1156,6 +1164,11 @@
 	"SETTINGS_FILE" : "/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/CMakeFiles/appRecipe-Manager_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"/home/LeGusto/Documents/Recipe-Manager/databasehandler.cpp",
+			"MU",
+			null
+		],
 		[ "/home/LeGusto/Documents/Recipe-Manager/main.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
