@@ -2,14 +2,58 @@
     {
         "classes": [
             {
-                "className": "databaseHandler",
+                "className": "DatabaseHandler",
                 "lineNumber": 8,
+                "methods": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "path",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "data",
+                                "type": "QVariantMap"
+                            }
+                        ],
+                        "index": 3,
+                        "name": "putData",
+                        "returnType": "void"
+                    }
+                ],
                 "object": true,
-                "qualifiedClassName": "databaseHandler",
+                "qualifiedClassName": "DatabaseHandler",
+                "signals": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "response",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 0,
+                        "name": "uploadDone",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "error",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 1,
+                        "name": "uploadFail",
+                        "returnType": "void"
+                    }
+                ],
                 "slots": [
                     {
                         "access": "public",
-                        "index": 0,
+                        "index": 2,
                         "name": "networkReplyReadyRead",
                         "returnType": "void"
                     }

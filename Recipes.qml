@@ -1,5 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
+import RecipeManager 1.0
+
 
 Page {
     title: "Recipe Cards"
@@ -76,6 +78,12 @@ Page {
         }
     }
 
+    DatabaseHandler {
+           id: dbHandler  // Renamed for clarity
+           onUploadDone: console.log("Success:", response)
+           onUploadFail: console.log("Error:", error)
+    }
+
     footer: Button {
         width: recipeListView.width - 30
         height: 50
@@ -88,6 +96,11 @@ Page {
                 prepTime: "0 mins",
                 ingredients: "ingredients"
             })
+
+            dbHandler.putData("Recipes/New", {
+                         Ingredients: "ingredients",
+                         Time: "0 mins"
+                    });
             recipeListView.positionViewAtEnd()
         }
     }
