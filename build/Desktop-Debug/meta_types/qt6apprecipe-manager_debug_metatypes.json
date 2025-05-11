@@ -17,8 +17,26 @@
                                 "type": "QVariantMap"
                             }
                         ],
-                        "index": 3,
+                        "index": 4,
                         "name": "putData",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 5,
+                        "name": "fetchRecipes",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "recipeName",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 6,
+                        "name": "deleteRecipe",
                         "returnType": "void"
                     }
                 ],
@@ -48,13 +66,29 @@
                         "index": 1,
                         "name": "uploadFail",
                         "returnType": "void"
-                    }
-                ],
-                "slots": [
+                    },
                     {
                         "access": "public",
+                        "arguments": [
+                            {
+                                "name": "recipes",
+                                "type": "QVariantList"
+                            }
+                        ],
                         "index": 2,
-                        "name": "networkReplyReadyRead",
+                        "name": "recipesFetched",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "recipeName",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 3,
+                        "name": "recipeDeleted",
                         "returnType": "void"
                     }
                 ],

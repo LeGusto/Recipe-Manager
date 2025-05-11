@@ -12,14 +12,14 @@ public:
     explicit DatabaseHandler(QObject *parent = nullptr);
 
     Q_INVOKABLE void putData(const QString &path, const QVariantMap &data);
-
-
-public slots:
-    void networkReplyReadyRead();
+    Q_INVOKABLE void fetchRecipes();
+    Q_INVOKABLE void deleteRecipe(const QString &recipeName);
 
 signals:
     void uploadDone(const QString &response);
     void uploadFail(const QString &error);
+    void recipesFetched(const QVariantList &recipes);
+    void recipeDeleted(const QString &recipeName);
 
 private:
     QNetworkAccessManager *networkManager = nullptr;

@@ -18,7 +18,5 @@ int main(int argc, char *argv[])
         Qt::QueuedConnection);
     engine.loadFromModule("Recipe-Manager", "Main");
 
-    // databaseHandler dbhandler;
-    // engine.rootContext()->setContextProperty("dbHandler", &dbhandler);
     return app.exec();
 }

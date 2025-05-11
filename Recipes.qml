@@ -8,16 +8,26 @@ Page {
 
     ListModel {
         id: recipeModel
-        ListElement {
-            name: "Pasta Carbonara"
-            prepTime: "15 mins"
-            ingredients: "Spaghetti, eggs, pancetta, cheese"
-        }
-        ListElement {
-            name: "Vegetable Stir Fry"
-            prepTime: "20 mins"
-            ingredients: "Broccoli, carrots, bell peppers, soy sauce"
-        }
+    }
+
+    DatabaseHandler {
+       id: dbHandler
+       onUploadDone: function(response) { console.log("Success:", response) }
+       onUploadFail: function(error) { console.log("Error:", error) }
+
+       onRecipesFetched: function(recipes) {
+           recipeModel.clear()
+
+           for (var i = 0; i < recipes.length; i++) {
+               recipeModel.append({
+                   name: recipes[i].id || "Unnamed Recipe",
+                   time: recipes[i].Time || "No time",
+                   ingredients: recipes[i].Ingredients || "No ingredients",
+               })
+           }
+       }
+
+        Component.onCompleted: fetchRecipes()
     }
 
     ListView {
@@ -56,7 +66,7 @@ Page {
                     }
 
                     Text {
-                        text: "⏱ " + prepTime
+                        text: "⏱ " + time
                         font.pixelSize: 14
                         color: "gray"
                     }
@@ -74,14 +84,19 @@ Page {
                     onClicked: console.log("Selected:", name)
                 }
 
+                Button {
+                        anchors.right: parent.right
+                        anchors.verticalCenter: parent.verticalCenter
+                        width: 30
+                        height: 30
+                        text: "×"
+                        onClicked: {
+                        dbHandler.deleteRecipe(name)
+                        recipeModel.remove(index)
+                    }
+                }
             }
         }
-    }
-
-    DatabaseHandler {
-           id: dbHandler  // Renamed for clarity
-           onUploadDone: console.log("Success:", response)
-           onUploadFail: console.log("Error:", error)
     }
 
     footer: Button {
@@ -91,9 +106,14 @@ Page {
 
         text: "Add New Recipe"
         onClicked: {
+
+            // onClicked: {
+            //     stackView.replace("AddRecipe.qml");
+            // }
+
             recipeModel.append({
-                name: "New Recipe",
-                prepTime: "0 mins",
+                name: "New",
+                time: "0 mins",
                 ingredients: "ingredients"
             })
 
