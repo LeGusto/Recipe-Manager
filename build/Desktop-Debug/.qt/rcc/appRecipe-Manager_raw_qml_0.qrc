@@ -5,6 +5,7 @@
     <file alias="Login.qml">/home/LeGusto/Documents/Recipe-Manager/Login.qml</file>
     <file alias="Start.qml">/home/LeGusto/Documents/Recipe-Manager/Start.qml</file>
     <file alias="Recipes.qml">/home/LeGusto/Documents/Recipe-Manager/Recipes.qml</file>
+    <file alias="StyledTextField.qml">/home/LeGusto/Documents/Recipe-Manager/StyledTextField.qml</file>
   </qresource>
 </RCC>
 

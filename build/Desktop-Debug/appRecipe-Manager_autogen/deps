@@ -1,5 +1,9 @@
 appRecipe-Manager_autogen/timestamp: \
 	/home/LeGusto/Documents/Recipe-Manager/CMakeLists.txt \
+	/home/LeGusto/Documents/Recipe-Manager/appcore.cpp \
+	/home/LeGusto/Documents/Recipe-Manager/appcore.h \
+	/home/LeGusto/Documents/Recipe-Manager/authhandler.cpp \
+	/home/LeGusto/Documents/Recipe-Manager/authhandler.h \
 	/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/.qt/qml_imports/appRecipe-Manager_conf.cmake \
 	/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/.qtc/package-manager/auto-setup.cmake \
 	/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/CMakeFiles/3.31.7/CMakeCXXCompiler.cmake \
@@ -8,13 +12,17 @@ appRecipe-Manager_autogen/timestamp: \
 	/home/LeGusto/Documents/Recipe-Manager/databasehandler.cpp \
 	/home/LeGusto/Documents/Recipe-Manager/databasehandler.h \
 	/home/LeGusto/Documents/Recipe-Manager/main.cpp \
+	/home/LeGusto/Documents/Recipe-Manager/usersession.cpp \
+	/home/LeGusto/Documents/Recipe-Manager/usersession.h \
 	/usr/include/QtCore/QFlags \
 	/usr/include/QtCore/QIODevice \
 	/usr/include/QtCore/QList \
 	/usr/include/QtCore/QMetaType \
 	/usr/include/QtCore/QObject \
+	/usr/include/QtCore/QSettings \
 	/usr/include/QtCore/QSharedDataPointer \
 	/usr/include/QtCore/QString \
+	/usr/include/QtCore/QTimer \
 	/usr/include/QtCore/QUrl \
 	/usr/include/QtCore/QVariant \
 	/usr/include/QtCore/q20functional.h \
@@ -33,6 +41,7 @@ appRecipe-Manager_autogen/timestamp: \
 	/usr/include/QtCore/qatomic.h \
 	/usr/include/QtCore/qatomic_cxx11.h \
 	/usr/include/QtCore/qbasicatomic.h \
+	/usr/include/QtCore/qbasictimer.h \
 	/usr/include/QtCore/qbindingstorage.h \
 	/usr/include/QtCore/qbytearray.h \
 	/usr/include/QtCore/qbytearrayalgorithms.h \
@@ -93,6 +102,7 @@ appRecipe-Manager_autogen/timestamp: \
 	/usr/include/QtCore/qscopedpointer.h \
 	/usr/include/QtCore/qscopeguard.h \
 	/usr/include/QtCore/qset.h \
+	/usr/include/QtCore/qsettings.h \
 	/usr/include/QtCore/qshareddata.h \
 	/usr/include/QtCore/qshareddata_impl.h \
 	/usr/include/QtCore/qsharedpointer.h \
@@ -122,6 +132,7 @@ appRecipe-Manager_autogen/timestamp: \
 	/usr/include/QtCore/qtdeprecationmarkers.h \
 	/usr/include/QtCore/qtenvironmentvariables.h \
 	/usr/include/QtCore/qtextstream.h \
+	/usr/include/QtCore/qtimer.h \
 	/usr/include/QtCore/qtmetamacros.h \
 	/usr/include/QtCore/qtnoop.h \
 	/usr/include/QtCore/qtpreprocessorsupport.h \

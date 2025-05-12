@@ -2,6 +2,249 @@
     {
         "classes": [
             {
+                "className": "AppCore",
+                "lineNumber": 10,
+                "object": true,
+                "properties": [
+                    {
+                        "constant": true,
+                        "designable": true,
+                        "final": false,
+                        "index": 0,
+                        "member": "m_dbHandler",
+                        "name": "dbHandler",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "DatabaseHandler*",
+                        "user": false
+                    },
+                    {
+                        "constant": true,
+                        "designable": true,
+                        "final": false,
+                        "index": 1,
+                        "member": "m_authHandler",
+                        "name": "authHandler",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "AuthHandler*",
+                        "user": false
+                    },
+                    {
+                        "constant": true,
+                        "designable": true,
+                        "final": false,
+                        "index": 2,
+                        "member": "m_userSession",
+                        "name": "userSession",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "UserSession*",
+                        "user": false
+                    }
+                ],
+                "qualifiedClassName": "AppCore",
+                "signals": [
+                    {
+                        "access": "public",
+                        "index": 0,
+                        "name": "authenticationChanged",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "appcore.h",
+        "outputRevision": 68
+    },
+    {
+        "classes": [
+            {
+                "className": "AuthHandler",
+                "lineNumber": 7,
+                "methods": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "email",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "password",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 8,
+                        "name": "signUp",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "email",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "password",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 9,
+                        "name": "signIn",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 10,
+                        "name": "logout",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "refreshToken",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 11,
+                        "name": "refreshToken",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 12,
+                        "name": "getIdToken",
+                        "returnType": "QString"
+                    },
+                    {
+                        "access": "public",
+                        "index": 13,
+                        "name": "getRefreshToken",
+                        "returnType": "QString"
+                    }
+                ],
+                "object": true,
+                "qualifiedClassName": "AuthHandler",
+                "signals": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "userId",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "email",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 0,
+                        "name": "userSignedIn",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "error",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 1,
+                        "name": "signInFailed",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 2,
+                        "name": "signUpCompleted",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "error",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 3,
+                        "name": "signUpFailed",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "error",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 4,
+                        "name": "errorOccurred",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "idToken",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "refreshToken",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 5,
+                        "name": "tokenRefreshed",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 6,
+                        "name": "logoutCompleted",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "error",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 7,
+                        "name": "logoutFailed",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "authhandler.h",
+        "outputRevision": 68
+    },
+    {
+        "classes": [
+            {
                 "className": "DatabaseHandler",
                 "lineNumber": 8,
                 "methods": [
@@ -37,6 +280,18 @@
                         ],
                         "index": 6,
                         "name": "deleteRecipe",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "data",
+                                "type": "QVariantMap"
+                            }
+                        ],
+                        "index": 7,
+                        "name": "addRecipe",
                         "returnType": "void"
                     }
                 ],
@@ -101,6 +356,142 @@
             }
         ],
         "inputFile": "databasehandler.h",
+        "outputRevision": 68
+    },
+    {
+        "classes": [
+            {
+                "className": "UserSession",
+                "lineNumber": 8,
+                "methods": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "userId",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "email",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "refreshToken",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 4,
+                        "name": "persistSession",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 5,
+                        "name": "clearSession",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 6,
+                        "name": "hasActiveSession",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "index": 7,
+                        "name": "startSessionTimer",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 8,
+                        "name": "stopSessionTimer",
+                        "returnType": "void"
+                    }
+                ],
+                "object": true,
+                "properties": [
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 0,
+                        "name": "isLoggedIn",
+                        "notify": "sessionChanged",
+                        "read": "isLoggedIn",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 1,
+                        "name": "userId",
+                        "notify": "sessionChanged",
+                        "read": "userId",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QString",
+                        "user": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 2,
+                        "name": "userEmail",
+                        "notify": "sessionChanged",
+                        "read": "userEmail",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QString",
+                        "user": false
+                    }
+                ],
+                "qualifiedClassName": "UserSession",
+                "signals": [
+                    {
+                        "access": "public",
+                        "index": 0,
+                        "name": "sessionChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 1,
+                        "name": "sessionAboutToExpire",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 2,
+                        "name": "sessionExpired",
+                        "returnType": "void"
+                    }
+                ],
+                "slots": [
+                    {
+                        "access": "private",
+                        "index": 3,
+                        "name": "handleSessionTimeout",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "usersession.h",
         "outputRevision": 68
     }
 ]

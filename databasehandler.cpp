@@ -3,15 +3,14 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 
-DatabaseHandler::DatabaseHandler(QObject *parent)
-    : QObject(parent)
-{
-    networkManager = new QNetworkAccessManager(this);
-}
+// ADD COOLDOWN FOR SUBMISSIOSN
+
+DatabaseHandler::DatabaseHandler(QNetworkAccessManager *manager, QObject *parent)
+    : QObject(parent), networkManager(manager) {}
 
 void DatabaseHandler::putData(const QString &path, const QVariantMap &data)
 {
-    QUrl url(baseUrl + "/" + path + ".json");
+    QUrl url(baseUrl + "/" + path + ".json?auth=" + authToken);
     QNetworkRequest request(url);
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
 
@@ -22,7 +21,10 @@ void DatabaseHandler::putData(const QString &path, const QVariantMap &data)
         if(reply->error() == QNetworkReply::NoError) {
             emit uploadDone(reply->readAll());
         } else {
-            emit uploadFail(reply->errorString());
+            QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
+            QJsonObject errorObj = doc.object()["error"].toObject();
+            QString errorMsg = errorObj["message"].toString();
+            emit uploadFail(errorMsg);
         }
         reply->deleteLater();
     });
@@ -30,7 +32,7 @@ void DatabaseHandler::putData(const QString &path, const QVariantMap &data)
 
 void DatabaseHandler::fetchRecipes()
 {
-QUrl url(baseUrl + "/Recipes.json");
+    QUrl url(baseUrl + "/Recipes/" + userId + ".json?auth=" + authToken);
     QNetworkRequest request(url);
 
     QNetworkReply *reply = networkManager->get(request);
@@ -49,7 +51,10 @@ QUrl url(baseUrl + "/Recipes.json");
 
             emit recipesFetched(recipes);
         } else {
-            emit uploadFail(reply->errorString());
+            QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
+            QJsonObject errorObj = doc.object()["error"].toObject();
+            QString errorMsg = errorObj["message"].toString();
+            emit uploadFail(errorMsg);
         }
         reply->deleteLater();
     });
@@ -57,7 +62,7 @@ QUrl url(baseUrl + "/Recipes.json");
 
 void DatabaseHandler::deleteRecipe(const QString &recipeName)
 {
-    QUrl url(baseUrl + "/Recipes/" + recipeName + ".json");
+    QUrl url(baseUrl + "/Recipes/" + userId + "/" + recipeName + ".json?auth=" + authToken);
     QNetworkRequest request(url);
 
     QNetworkReply *reply = networkManager->deleteResource(request);
@@ -66,8 +71,16 @@ void DatabaseHandler::deleteRecipe(const QString &recipeName)
         if(reply->error() == QNetworkReply::NoError) {
             emit recipeDeleted(recipeName);
         } else {
-            emit uploadFail("Delete failed: " + reply->errorString());
+            QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
+            QJsonObject errorObj = doc.object()["error"].toObject();
+            QString errorMsg = errorObj["message"].toString();
+            emit uploadFail(errorMsg);
         }
         reply->deleteLater();
     });
+}
+
+void DatabaseHandler::addRecipe(const QVariantMap &data)
+{
+    putData("Recipes/" + userId + "/New", data);
 }

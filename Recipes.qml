@@ -10,24 +10,29 @@ Page {
         id: recipeModel
     }
 
-    DatabaseHandler {
-       id: dbHandler
-       onUploadDone: function(response) { console.log("Success:", response) }
-       onUploadFail: function(error) { console.log("Error:", error) }
+    Connections {
+        target: AppCore.dbHandler
 
-       onRecipesFetched: function(recipes) {
-           recipeModel.clear()
+        function onRecipesFetched(recipes) {
+            recipeModel.clear()
+            for (var i = 0; i < recipes.length; i++) {
+                recipeModel.append({
+                    name: recipes[i].id || "Unnamed Recipe",
+                    time: recipes[i].Time || "No time",
+                    ingredients: recipes[i].Ingredients || "No ingredients",
+                    recipeId: recipes[i].id
+                })
+            }
+        }
+    }
 
-           for (var i = 0; i < recipes.length; i++) {
-               recipeModel.append({
-                   name: recipes[i].id || "Unnamed Recipe",
-                   time: recipes[i].Time || "No time",
-                   ingredients: recipes[i].Ingredients || "No ingredients",
-               })
-           }
-       }
-
-        Component.onCompleted: fetchRecipes()
+    Component.onCompleted: {
+        if (AppCore && AppCore.dbHandler) {
+            AppCore.dbHandler.fetchRecipes()
+        } else {
+            if (!AppCore) console.error("AppCore undefined!")
+            else console.error("dbHandler undefined!")
+        }
     }
 
     ListView {
@@ -91,11 +96,23 @@ Page {
                         height: 30
                         text: "×"
                         onClicked: {
-                        dbHandler.deleteRecipe(name)
+                        AppCore.dbHandler.deleteRecipe(name)
                         recipeModel.remove(index)
                     }
                 }
             }
+        }
+    }
+
+    header: Button {
+        id: logoutBtn
+        text: "Log Out"
+        highlighted: true
+
+        onClicked: {
+            // Disable button during logout process
+            logoutBtn.enabled = false;
+            AppCore.authHandler.logout();
         }
     }
 
@@ -117,7 +134,7 @@ Page {
                 ingredients: "ingredients"
             })
 
-            dbHandler.putData("Recipes/New", {
+            AppCore.dbHandler.addRecipe({
                          Ingredients: "ingredients",
                          Time: "0 mins"
                     });

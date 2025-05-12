@@ -9,11 +9,14 @@ class DatabaseHandler : public QObject
 {
     Q_OBJECT
 public:
-    explicit DatabaseHandler(QObject *parent = nullptr);
+    explicit DatabaseHandler(QNetworkAccessManager *manager, QObject *parent = nullptr);
 
+    void setAuthToken(const QString &token) { authToken = token; }
+    void setUserId(const QString ID) { userId = ID; }
     Q_INVOKABLE void putData(const QString &path, const QVariantMap &data);
     Q_INVOKABLE void fetchRecipes();
     Q_INVOKABLE void deleteRecipe(const QString &recipeName);
+    Q_INVOKABLE void addRecipe(const QVariantMap &data);
 
 signals:
     void uploadDone(const QString &response);
@@ -24,7 +27,9 @@ signals:
 private:
     QNetworkAccessManager *networkManager = nullptr;
     QNetworkReply *networkReply = nullptr;
-    QString baseUrl = "";
+    QString baseUrl = qEnvironmentVariable("FIREBASE_BASE_URL");
+    QString authToken = "";
+    QString userId = "";
 };
 
 #endif // DATABASEHANDLER_H

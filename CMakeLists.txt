@@ -25,6 +25,10 @@ qt_add_qml_module(appRecipe-Manager
         SOURCES
         SOURCES databasehandler.h databasehandler.cpp
         QML_FILES
+        SOURCES authhandler.h authhandler.cpp
+        SOURCES appcore.h appcore.cpp
+        SOURCES usersession.h usersession.cpp
+        QML_FILES StyledTextField.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

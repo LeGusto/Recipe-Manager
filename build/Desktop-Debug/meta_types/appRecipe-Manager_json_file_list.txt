@@ -1,1 +1,4 @@
+/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/appRecipe-Manager_autogen/include/../EWIEGA46WW/moc_appcore.cpp.json
+/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/appRecipe-Manager_autogen/include/../EWIEGA46WW/moc_authhandler.cpp.json
 /home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/appRecipe-Manager_autogen/include/../EWIEGA46WW/moc_databasehandler.cpp.json
+/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/appRecipe-Manager_autogen/include/../EWIEGA46WW/moc_usersession.cpp.json

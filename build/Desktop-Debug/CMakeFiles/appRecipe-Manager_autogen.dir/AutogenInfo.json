@@ -1066,9 +1066,27 @@
 	"HEADERS" : 
 	[
 		[
+			"/home/LeGusto/Documents/Recipe-Manager/appcore.h",
+			"MU",
+			"EWIEGA46WW/moc_appcore.cpp",
+			null
+		],
+		[
+			"/home/LeGusto/Documents/Recipe-Manager/authhandler.h",
+			"MU",
+			"EWIEGA46WW/moc_authhandler.cpp",
+			null
+		],
+		[
 			"/home/LeGusto/Documents/Recipe-Manager/databasehandler.h",
 			"MU",
 			"EWIEGA46WW/moc_databasehandler.cpp",
+			null
+		],
+		[
+			"/home/LeGusto/Documents/Recipe-Manager/usersession.h",
+			"MU",
+			"EWIEGA46WW/moc_usersession.cpp",
 			null
 		]
 	],
@@ -1151,6 +1169,7 @@
 		"/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/.rcc/qmlcache/appRecipe-Manager_Recipes_qml.cpp",
 		"/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/.rcc/qmlcache/appRecipe-Manager_Signup_qml.cpp",
 		"/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/.rcc/qmlcache/appRecipe-Manager_Start_qml.cpp",
+		"/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/.rcc/qmlcache/appRecipe-Manager_StyledTextField_qml.cpp",
 		"/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/.rcc/qmlcache/appRecipe-Manager_qmlcache_loader.cpp",
 		"/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/apprecipe-manager_qmltyperegistrations.cpp"
 	],
@@ -1164,12 +1183,15 @@
 	"SETTINGS_FILE" : "/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/CMakeFiles/appRecipe-Manager_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "/home/LeGusto/Documents/Recipe-Manager/appcore.cpp", "MU", null ],
+		[ "/home/LeGusto/Documents/Recipe-Manager/authhandler.cpp", "MU", null ],
 		[
 			"/home/LeGusto/Documents/Recipe-Manager/databasehandler.cpp",
 			"MU",
 			null
 		],
-		[ "/home/LeGusto/Documents/Recipe-Manager/main.cpp", "MU", null ]
+		[ "/home/LeGusto/Documents/Recipe-Manager/main.cpp", "MU", null ],
+		[ "/home/LeGusto/Documents/Recipe-Manager/usersession.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
@@ -1182,6 +1204,7 @@
 		"/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/.rcc/qmlcache/appRecipe-Manager_Recipes_qml.cpp",
 		"/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/.rcc/qmlcache/appRecipe-Manager_Signup_qml.cpp",
 		"/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/.rcc/qmlcache/appRecipe-Manager_Start_qml.cpp",
+		"/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/.rcc/qmlcache/appRecipe-Manager_StyledTextField_qml.cpp",
 		"/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/.rcc/qmlcache/appRecipe-Manager_qmlcache_loader.cpp",
 		"/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/apprecipe-manager_qmltyperegistrations.cpp"
 	],

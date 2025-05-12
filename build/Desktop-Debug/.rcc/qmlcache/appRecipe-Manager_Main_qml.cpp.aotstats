@@ -5,11 +5,35 @@
                 "entries": [
                     {
                         "codegenSuccessfull": false,
+                        "column": 22,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"initialItem\".",
+                        "functionName": "initialItem",
+                        "line": 16
+                    },
+                    {
+                        "codegenSuccessfull": false,
                         "column": 23,
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find property \"fill\".",
                         "functionName": "fill",
-                        "line": 13
+                        "line": 15
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 17,
+                        "durationMicroseconds": 49,
+                        "errorMessage": "Cannot access value for name AppCore",
+                        "functionName": "target",
+                        "line": 20
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 9,
+                        "durationMicroseconds": 48,
+                        "errorMessage": "Cannot access value for name AppCore",
+                        "functionName": "onAuthenticationChanged",
+                        "line": 21
                     }
                 ],
                 "filepath": "/home/LeGusto/Documents/Recipe-Manager/Main.qml"

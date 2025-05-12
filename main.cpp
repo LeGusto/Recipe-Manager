@@ -1,12 +1,15 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#include <databasehandler.h>
+#include <appcore.h>
 
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
 
-    qmlRegisterType<DatabaseHandler>("RecipeManager", 1, 0, "DatabaseHandler");
+    qmlRegisterSingletonType<AppCore>("RecipeManager", 1, 0, "AppCore",
+                                      [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject* {
+                                          return new AppCore();
+                                      });
 
 
     QQmlApplicationEngine engine;

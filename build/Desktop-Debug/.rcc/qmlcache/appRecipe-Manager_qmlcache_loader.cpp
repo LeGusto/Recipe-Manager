@@ -40,6 +40,13 @@ namespace _qt_qml_Recipe_0x2d_Manager_Recipes_qml {
         reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
     };
 }
+namespace _qt_qml_Recipe_0x2d_Manager_StyledTextField_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
 
 }
 namespace {
@@ -59,6 +66,7 @@ Registry::Registry() {
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/Recipe-Manager/Login.qml"), &QmlCacheGeneratedCode::_qt_qml_Recipe_0x2d_Manager_Login_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/Recipe-Manager/Start.qml"), &QmlCacheGeneratedCode::_qt_qml_Recipe_0x2d_Manager_Start_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/Recipe-Manager/Recipes.qml"), &QmlCacheGeneratedCode::_qt_qml_Recipe_0x2d_Manager_Recipes_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/Recipe-Manager/StyledTextField.qml"), &QmlCacheGeneratedCode::_qt_qml_Recipe_0x2d_Manager_StyledTextField_qml::unit);
     QQmlPrivate::RegisterQmlUnitCacheHook registration;
     registration.structVersion = 0;
     registration.lookupCachedQmlUnit = &lookupCachedUnit;
