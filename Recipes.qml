@@ -10,25 +10,27 @@ Page {
         id: recipeModel
     }
 
-    Connections {
-        target: AppCore.dbHandler
 
-        function onRecipesFetched(recipes) {
-            recipeModel.clear()
-            for (var i = 0; i < recipes.length; i++) {
-                recipeModel.append({
-                    name: recipes[i].id || "Unnamed Recipe",
-                    time: recipes[i].Time || "No time",
-                    ingredients: recipes[i].Ingredients || "No ingredients",
-                    recipeId: recipes[i].id
-                })
+    function loadRecipes() {
+        for (var i = 0; i < AppCore.dbHandler.recipes.length; i++) {
+            var ingredientsTxt = "No ingredients";
+            if (AppCore.dbHandler.recipes[i].Ingredients) {
+                ingredientsTxt = AppCore.dbHandler.recipes[i].Ingredients.join(", ")
             }
+
+            recipeModel.append({
+                name: AppCore.dbHandler.recipes[i].id || "Unnamed Recipe",
+                minutes: AppCore.dbHandler.recipes[i].Minutes || "No time",
+                hours: AppCore.dbHandler.recipes[i].Hours || " No time",
+                ingredientsText: ingredientsTxt,
+                recipeId: AppCore.dbHandler.recipes[i].id || "No Id"
+            })
         }
     }
 
     Component.onCompleted: {
         if (AppCore && AppCore.dbHandler) {
-            AppCore.dbHandler.fetchRecipes()
+            loadRecipes();
         } else {
             if (!AppCore) console.error("AppCore undefined!")
             else console.error("dbHandler undefined!")
@@ -71,14 +73,14 @@ Page {
                     }
 
                     Text {
-                        text: "⏱ " + time
+                        text: "⏱ " + hours + " hours " + minutes + " minutes"
                         font.pixelSize: 14
                         color: "gray"
                     }
 
                     Text {
                         width: parent.width
-                        text: "🍴 " + ingredients
+                        text: ingredientsText
                         font.pixelSize: 14
                         wrapMode: Text.WordWrap
                     }
@@ -124,21 +126,11 @@ Page {
         text: "Add New Recipe"
         onClicked: {
 
-            // onClicked: {
-            //     stackView.replace("AddRecipe.qml");
-            // }
+            onClicked: {
+                stackView.replace("RecipeCreator.qml");
+            }
 
-            recipeModel.append({
-                name: "New",
-                time: "0 mins",
-                ingredients: "ingredients"
-            })
-
-            AppCore.dbHandler.addRecipe({
-                         Ingredients: "ingredients",
-                         Time: "0 mins"
-                    });
-            recipeListView.positionViewAtEnd()
+            return
         }
     }
 }

@@ -7,4 +7,5 @@ Login 1.0 Login.qml
 Start 1.0 Start.qml
 Recipes 1.0 Recipes.qml
 StyledTextField 1.0 StyledTextField.qml
+RecipeCreator 1.0 RecipeCreator.qml
 

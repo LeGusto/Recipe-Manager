@@ -296,6 +296,21 @@
                     }
                 ],
                 "object": true,
+                "properties": [
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 0,
+                        "member": "m_recipes",
+                        "name": "recipes",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QVariantList",
+                        "user": false
+                    }
+                ],
                 "qualifiedClassName": "DatabaseHandler",
                 "signals": [
                     {

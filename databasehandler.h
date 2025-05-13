@@ -17,6 +17,7 @@ public:
     Q_INVOKABLE void fetchRecipes();
     Q_INVOKABLE void deleteRecipe(const QString &recipeName);
     Q_INVOKABLE void addRecipe(const QVariantMap &data);
+    Q_PROPERTY(QVariantList recipes MEMBER m_recipes)
 
 signals:
     void uploadDone(const QString &response);
@@ -27,6 +28,7 @@ signals:
 private:
     QNetworkAccessManager *networkManager = nullptr;
     QNetworkReply *networkReply = nullptr;
+    QVariantList m_recipes;
     QString baseUrl = qEnvironmentVariable("FIREBASE_BASE_URL");
     QString authToken = "";
     QString userId = "";

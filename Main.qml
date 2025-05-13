@@ -20,10 +20,21 @@ ApplicationWindow {
         target: AppCore
         function onAuthenticationChanged() {
             if (AppCore.userSession.hasActiveSession()) {
-                stackView.replace("Recipes.qml")
+                AppCore.dbHandler.fetchRecipes()
             } else {
-                stackView.replace("Login.qml");
+                stackView.replace("Login.qml")
             }
+        }
+    }
+
+    Connections {
+        target: AppCore.dbHandler
+        function onRecipesFetched() {
+            stackView.replace("Recipes.qml")
+        }
+
+        function onUploadFail() {
+            stackView.replace("Recipes.qml")
         }
     }
 }

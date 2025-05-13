@@ -42,14 +42,14 @@ void DatabaseHandler::fetchRecipes()
             QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
             QVariantMap data = doc.toVariant().toMap();
 
-            QVariantList recipes;
+            m_recipes.clear();
             for (const auto &key : data.keys()) {
                 QVariantMap recipe = data[key].toMap();
                 recipe["id"] = key;
-                recipes.append(recipe);
+                m_recipes.append(recipe);
             }
 
-            emit recipesFetched(recipes);
+            emit recipesFetched(m_recipes);
         } else {
             QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
             QJsonObject errorObj = doc.object()["error"].toObject();
@@ -82,5 +82,7 @@ void DatabaseHandler::deleteRecipe(const QString &recipeName)
 
 void DatabaseHandler::addRecipe(const QVariantMap &data)
 {
-    putData("Recipes/" + userId + "/New", data);
+    putData("Recipes/" + userId + "/" + data["Name"].toString(), data);
+    data["id"] = data["Name"].toString();
+    m_recipes.append(data);
 }

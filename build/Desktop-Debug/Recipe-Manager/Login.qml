@@ -3,8 +3,6 @@ import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 import RecipeManager 1.0
 
-// DISABLE LOGIN BUTTON AFTER PRESSING IT UNTIL RESPONSE RECEIVED
-
 Page {
     id: loginPage
     title: "Login"
@@ -24,6 +22,7 @@ Page {
             Layout.fillWidth: true
             id: emailField
             placeholderText: "Email"
+            text: "a@a.com"
             hasError: loginPage.showError
             onActiveFocusChanged: if (activeFocus) {
                 loginPage.showError = false
@@ -37,6 +36,7 @@ Page {
             Layout.fillWidth: true
             id: passwordField
             placeholderText: "Password"
+            text: "aaaaaaaa"
             echoMode: TextInput.Password
             hasError: loginPage.showError
             onActiveFocusChanged: if (activeFocus) {
@@ -67,7 +67,11 @@ Page {
                 text: "Login"
 
                 onClicked: {
-                    onClicked: AppCore.authHandler.signIn(emailField.text, passwordField.text)
+                    onClicked: {
+                        loginButton.enabled = false
+                        loginButton.text = "Processing..."
+                        AppCore.authHandler.signIn(emailField.text, passwordField.text)
+                    }
                 }
 
 
@@ -89,6 +93,8 @@ Page {
         function onSignInFailed(error) {
             showError = true
             errorLabel.text = error
+            loginButton.enabled = false
+            loginButton.text = "Login"
         }
     }
 }

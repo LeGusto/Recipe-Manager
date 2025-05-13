@@ -13,5 +13,6 @@
 /home/LeGusto/Documents/Recipe-Manager/Start.qml
 /home/LeGusto/Documents/Recipe-Manager/Recipes.qml
 /home/LeGusto/Documents/Recipe-Manager/StyledTextField.qml
+/home/LeGusto/Documents/Recipe-Manager/RecipeCreator.qml
 --json
 /home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/appRecipe-Manager_qmllint.json
