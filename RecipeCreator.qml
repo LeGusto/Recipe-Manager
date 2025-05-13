@@ -168,6 +168,7 @@ Page {
 
                         onActiveFocusChanged: if (activeFocus) {
                             recipeCreatorPage.showError = false
+                            errorLabel.visible = false;
                             errorLabel.text = "";
                         }
 
@@ -184,6 +185,7 @@ Page {
                 color: "red"
                 wrapMode: Text.Wrap
                 text: "";
+                visible: false
 
                 Layout.alignment: Qt.AlignHCenter
             }
@@ -215,7 +217,7 @@ Page {
                     SpinBox {
                         id: hoursTime
                         from: 0
-                        to: 999
+                        to: 99
                         value: 0
                     }
                     Label {
@@ -225,7 +227,7 @@ Page {
                     SpinBox {
                         id: minutesTime
                         from: 0
-                        to: 999
+                        to: 60
                         value: 0
                     }
                 }
@@ -355,12 +357,14 @@ Page {
             if (nameField.text.trim() === "") {
                 errorLabel.text = "Name cannot be empty"
                 showError = true
+                errorLabel.visible = true
                 return false;
             }
 
             if (AppCore.dbHandler.recipes[i].Name === nameField.text) {
                 errorLabel.text = "Name must be unique"
                 showError = true
+                errorLabel.visible = true
                 return false;
             }
         }
