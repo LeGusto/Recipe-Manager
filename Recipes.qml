@@ -2,7 +2,6 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import RecipeManager 1.0
 
-
 Page {
     title: "Recipe Cards"
 
@@ -10,30 +9,52 @@ Page {
         id: recipeModel
     }
 
+    function convertSteps(stepsArray) {
+        var model = Qt.createQmlObject('import QtQuick 2.15; ListModel {}',
+                                       parent)
+
+        if (!stepsArray)
+            return model
+        stepsArray.forEach(function (step) {
+            model.append({
+                             "stepText": step
+                         })
+        })
+        return model
+    }
 
     function loadRecipes() {
         for (var i = 0; i < AppCore.dbHandler.recipes.length; i++) {
-            var ingredientsTxt = "No ingredients";
+            var ingredientsTxt = "No ingredients"
             if (AppCore.dbHandler.recipes[i].Ingredients) {
-                ingredientsTxt = AppCore.dbHandler.recipes[i].Ingredients.join(", ")
+                ingredientsTxt = AppCore.dbHandler.recipes[i].Ingredients.join(
+                            ", ")
             }
 
             recipeModel.append({
-                name: AppCore.dbHandler.recipes[i].id || "Unnamed Recipe",
-                minutes: AppCore.dbHandler.recipes[i].Minutes || "No time",
-                hours: AppCore.dbHandler.recipes[i].Hours || " No time",
-                ingredientsText: ingredientsTxt,
-                recipeId: AppCore.dbHandler.recipes[i].id || "No Id"
-            })
+                                   "name": AppCore.dbHandler.recipes[i].id
+                                   || "Unnamed Recipe",
+                                   "minutes": AppCore.dbHandler.recipes[i].Minutes
+                                   || "No time",
+                                   "hours": AppCore.dbHandler.recipes[i].Hours
+                                   || " No time",
+                                   "ingredientsText": ingredientsTxt,
+                                   "recipeId"// stepsArray: stepsArray,
+                                   : AppCore.dbHandler.recipes[i].id || "No Id",
+                                   "steps": convertSteps(
+                                                AppCore.dbHandler.recipes[i].Steps)
+                               })
         }
     }
 
     Component.onCompleted: {
         if (AppCore && AppCore.dbHandler) {
-            loadRecipes();
+            loadRecipes()
         } else {
-            if (!AppCore) console.error("AppCore undefined!")
-            else console.error("dbHandler undefined!")
+            if (!AppCore)
+                console.error("AppCore undefined!")
+            else
+                console.error("dbHandler undefined!")
         }
     }
 
@@ -45,8 +66,9 @@ Page {
         clip: true
         boundsBehavior: Flickable.StopAtBounds
 
-
-        header: Item { height: 15 }
+        header: Item {
+            height: 15
+        }
 
         delegate: Item {
             width: ListView.view.width
@@ -59,7 +81,6 @@ Page {
                 color: "white"
                 border.color: "#e0e0e0"
                 anchors.horizontalCenter: parent.horizontalCenter
-
 
                 Column {
                     anchors.fill: parent
@@ -88,16 +109,26 @@ Page {
 
                 MouseArea {
                     anchors.fill: parent
-                    onClicked: console.log("Selected:", name)
+                    onClicked: {
+                        stackView.push("ViewRecipe.qml", {
+                                           "recipe": {
+                                               "name": name,
+                                               "hours": hours,
+                                               "minutes": minutes,
+                                               "ingredientsText": ingredientsText,
+                                               "steps": steps
+                                           }
+                                       })
+                    }
                 }
 
                 Button {
-                        anchors.right: parent.right
-                        anchors.verticalCenter: parent.verticalCenter
-                        width: 30
-                        height: 30
-                        text: "×"
-                        onClicked: {
+                    anchors.right: parent.right
+                    anchors.verticalCenter: parent.verticalCenter
+                    width: 30
+                    height: 30
+                    text: "×"
+                    onClicked: {
                         AppCore.dbHandler.deleteRecipe(name)
                         recipeModel.remove(index)
                     }
@@ -113,8 +144,8 @@ Page {
 
         onClicked: {
             // Disable button during logout process
-            logoutBtn.enabled = false;
-            AppCore.authHandler.logout();
+            logoutBtn.enabled = false
+            AppCore.authHandler.logout()
         }
     }
 
@@ -122,12 +153,13 @@ Page {
         width: recipeListView.width - 30
         height: 50
         x: (recipeListView.width - width) / 2
-
         text: "Add New Recipe"
+        highlighted: true
+
         onClicked: {
 
             onClicked: {
-                stackView.replace("RecipeCreator.qml");
+                stackView.replace("RecipeCreator.qml")
             }
 
             return

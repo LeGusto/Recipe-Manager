@@ -29,11 +29,11 @@ ApplicationWindow {
 
     Connections {
         target: AppCore.dbHandler
-        function onRecipesFetched() {
+        function onFetchRecipesSuccess() {
             stackView.replace("Recipes.qml")
         }
 
-        function onUploadFail() {
+        function onFetchRecipesFail() {
             stackView.replace("Recipes.qml")
         }
     }

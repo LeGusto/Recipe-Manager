@@ -9,7 +9,7 @@ Page {
     property int time: 0
     property ListModel steps: ListModel {}
     property ListModel ingredients: ListModel {}
-    property bool showError: false;
+    property bool showError: false
 
     Component {
         id: stepComponent
@@ -39,10 +39,10 @@ Page {
                 TextArea {
                     color: "black"
                     background: Rectangle {
-                            radius: 8
-                            color: "whitesmoke"
-                            border.color: "#cccccc"
-                            border.width: 2
+                        radius: 8
+                        color: "whitesmoke"
+                        border.color: "#cccccc"
+                        border.width: 2
                     }
                     id: stepField
                     Layout.fillWidth: true
@@ -51,7 +51,8 @@ Page {
                     placeholderText: "Enter step..."
 
                     onTextChanged: {
-                        if (stepNumber - 1 >= 0 && stepNumber - 1 < steps.count) {
+                        if (stepNumber - 1 >= 0
+                                && stepNumber - 1 < steps.count) {
                             steps.setProperty(stepNumber - 1, "stepText", text)
                         }
                     }
@@ -60,7 +61,6 @@ Page {
 
             Connections {
                 target: stepComponent
-
             }
         }
     }
@@ -69,14 +69,14 @@ Page {
         id: ingredientComponent
 
         Rectangle {
-            width: Math.min(ingredientLabel.implicitWidth + 30, ingredientsFlow.width)
+            width: Math.min(ingredientLabel.implicitWidth + 30,
+                            ingredientsFlow.width)
             height: 40
             radius: 15
             color: "#f0f0f0"
             border.color: "#cccccc"
             property string ingredientText: ""
             property int ingredientId: 0
-
 
             Label {
                 id: ingredientLabel
@@ -97,7 +97,6 @@ Page {
                     margins: -5
                 }
 
-
                 contentItem: Text {
                     text: "x"
                     color: "red"
@@ -109,8 +108,8 @@ Page {
                 onClicked: {
                     for (var i = 0; i < ingredients.count; i++) {
                         if (ingredients.get(i).ingredientId === ingredientId) {
-                            ingredients.remove(i);
-                            break;
+                            ingredients.remove(i)
+                            break
                         }
                     }
                 }
@@ -154,37 +153,35 @@ Page {
                 border.color: "#e0e0e0"
 
                 StyledTextField {
-                        id: nameField
-                        anchors.fill: parent
-                        anchors.margins: 10
-                        color: "black"
+                    id: nameField
+                    anchors.fill: parent
+                    anchors.margins: 10
+                    color: "black"
 
-                        // background: Rectangle {
-                        //     radius: 6
-                        //     color: "whitesmoke"
-                        //     border.color: "#cccccc"
-                        //     border.width: 2
-                        // }
+                    // background: Rectangle {
+                    //     radius: 6
+                    //     color: "whitesmoke"
+                    //     border.color: "#cccccc"
+                    //     border.width: 2
+                    // }
+                    onActiveFocusChanged: if (activeFocus) {
+                                              recipeCreatorPage.showError = false
+                                              errorLabel.visible = false
+                                              errorLabel.text = ""
+                                          }
 
-                        onActiveFocusChanged: if (activeFocus) {
-                            recipeCreatorPage.showError = false
-                            errorLabel.visible = false;
-                            errorLabel.text = "";
-                        }
+                    hasError: recipeCreatorPage.showError
 
-                        hasError: recipeCreatorPage.showError
-
-                        placeholderText: "Recipe name"
-                        horizontalAlignment: Text.AlignHCenter
-
-                    }
+                    placeholderText: "Recipe name"
+                    horizontalAlignment: Text.AlignHCenter
+                }
             }
 
             Label {
                 id: errorLabel
                 color: "red"
                 wrapMode: Text.Wrap
-                text: "";
+                text: ""
                 visible: false
 
                 Layout.alignment: Qt.AlignHCenter
@@ -239,7 +236,6 @@ Page {
                 spacing: 10
                 implicitHeight: ingredientsList.height + 15 // Total padding
 
-
                 Loader {
                     sourceComponent: nameLabelComponent
                     Layout.fillWidth: true
@@ -288,11 +284,12 @@ Page {
                         onAccepted: {
                             if (text.trim() !== "") {
                                 ingredients.append({
-                                    "ingredientText": text.trim(),
-                                    "ingredientId": countId
-                                });
-                                text = "";
-                                countId++;
+                                                       "ingredientText": text.trim(
+                                                                             ),
+                                                       "ingredientId": countId
+                                                   })
+                                text = ""
+                                countId++
                             }
                         }
                     }
@@ -338,14 +335,17 @@ Page {
                 Button {
                     Layout.alignment: Qt.AlignHCenter
                     text: "+ Add Step"
-                    onClicked: steps.append({"stepText": ""})
+                    onClicked: steps.append({
+                                                "stepText": ""
+                                            })
                 }
 
                 Button {
                     Layout.alignment: Qt.AlignHCenter
                     text: "- Remove Step"
                     onClicked: {
-                        if (steps.count > 0) steps.remove(steps.count - 1)
+                        if (steps.count > 0)
+                            steps.remove(steps.count - 1)
                     }
                 }
             }
@@ -358,47 +358,80 @@ Page {
                 errorLabel.text = "Name cannot be empty"
                 showError = true
                 errorLabel.visible = true
-                return false;
+                return false
             }
 
             if (AppCore.dbHandler.recipes[i].Name === nameField.text) {
                 errorLabel.text = "Name must be unique"
                 showError = true
                 errorLabel.visible = true
-                return false;
+                return false
             }
         }
-        return true;
+        return true
     }
 
-    footer: Button {
-        Layout.alignment: Qt.AlignHCenter
-        text: "Save Recipe"
-        highlighted: true
-        onClicked: {
+    footer: RowLayout {
+        width: parent.width
+        spacing: 0
+        Button {
+            id: backButton
+            text: "Back"
+            onClicked: stackView.replace("Recipes.qml")
+            highlighted: true
+            Layout.fillWidth: true
+            Layout.preferredWidth: parent.width / 2
+        }
 
-            if (!validateInput()) return
+        Button {
+            id: submitButton
+            Layout.alignment: Qt.AlignHCenter
+            text: "Save Recipe"
+            highlighted: true
+            Layout.fillWidth: true
+            Layout.preferredWidth: parent.width / 2
+            onClicked: {
 
-            var ingredientsAdd = [];
-            var i;
+                if (!validateInput())
+                    return
 
-            for (i = 0; i < ingredients.count; i++) {
-                ingredientsAdd.push(ingredients.get(i).ingredientText);
+                submitButton.enabled = false
+                submitButton.text = "Processing..."
+
+                var ingredientsAdd = []
+                var i
+
+                for (i = 0; i < ingredients.count; i++) {
+                    ingredientsAdd.push(ingredients.get(i).ingredientText)
+                }
+
+                var stepsAdd = []
+                for (i = 0; i < steps.count; i++) {
+                    stepsAdd.push(steps.get(i).stepText)
+                }
+
+                AppCore.dbHandler.addRecipe({
+                                                "Name": nameField.text,
+                                                "Ingredients": ingredientsAdd,
+                                                "Hours": hoursTime.value.toString(
+                                                             ),
+                                                "Minutes": minutesTime.value.toString(
+                                                               ),
+                                                "Steps": stepsAdd,
+                                                "id": nameField.text
+                                            })
             }
-
-            var stepsAdd = [];
-            for (i = 0; i < steps.count; i++) {
-                stepsAdd.push(steps.get(i).stepText);
-            }
-
-            AppCore.dbHandler.addRecipe({
-                         Name: nameField.text,
-                         Ingredients: ingredientsAdd,
-                         Hours: hoursTime.value.toString(),
-                         Minutes: minutesTime.value.toString(),
-                         Steps: stepsAdd
-                    });
         }
     }
 
+    Connections {
+        target: AppCore.dbHandler
+
+        function onAddRecipeSuccess() {
+
+            submitButton.enabled = false
+            submitButton.text = "Save Recipe"
+            stackView.replace("Recipes.qml")
+        }
+    }
 }

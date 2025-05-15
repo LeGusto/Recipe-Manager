@@ -20,10 +20,14 @@ public:
     Q_PROPERTY(QVariantList recipes MEMBER m_recipes)
 
 signals:
-    void uploadDone(const QString &response);
-    void uploadFail(const QString &error);
-    void recipesFetched(const QVariantList &recipes);
-    void recipeDeleted(const QString &recipeName);
+    void putDataSuccess(const QString &response);
+    void putDataFail(const QString &error);
+    void fetchRecipesSuccess(const QString &response);
+    void fetchRecipesFail(const QString &error);
+    void deleteRecipeSuccess(const QString &recipeName);
+    void deleteRecipeFail(const QString &error);
+    void addRecipeSuccess(const QString &recipeName);
+    void addRecipeFail(const QString &error);
 
 private:
     QNetworkAccessManager *networkManager = nullptr;

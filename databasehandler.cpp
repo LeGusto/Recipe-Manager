@@ -19,12 +19,12 @@ void DatabaseHandler::putData(const QString &path, const QVariantMap &data)
 
     connect(reply, &QNetworkReply::finished, [=]() {
         if(reply->error() == QNetworkReply::NoError) {
-            emit uploadDone(reply->readAll());
+            emit putDataSuccess("OK");
         } else {
             QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
             QJsonObject errorObj = doc.object()["error"].toObject();
             QString errorMsg = errorObj["message"].toString();
-            emit uploadFail(errorMsg);
+            emit putDataFail(errorMsg);
         }
         reply->deleteLater();
     });
@@ -49,12 +49,12 @@ void DatabaseHandler::fetchRecipes()
                 m_recipes.append(recipe);
             }
 
-            emit recipesFetched(m_recipes);
+            emit fetchRecipesSuccess("OK");
         } else {
             QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
             QJsonObject errorObj = doc.object()["error"].toObject();
             QString errorMsg = errorObj["message"].toString();
-            emit uploadFail(errorMsg);
+            emit fetchRecipesFail(errorMsg);
         }
         reply->deleteLater();
     });
@@ -69,12 +69,12 @@ void DatabaseHandler::deleteRecipe(const QString &recipeName)
 
     connect(reply, &QNetworkReply::finished, [=]() {
         if(reply->error() == QNetworkReply::NoError) {
-            emit recipeDeleted(recipeName);
+            emit deleteRecipeSuccess("OK");
         } else {
             QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
             QJsonObject errorObj = doc.object()["error"].toObject();
             QString errorMsg = errorObj["message"].toString();
-            emit uploadFail(errorMsg);
+            emit deleteRecipeFail(errorMsg);
         }
         reply->deleteLater();
     });
@@ -82,7 +82,9 @@ void DatabaseHandler::deleteRecipe(const QString &recipeName)
 
 void DatabaseHandler::addRecipe(const QVariantMap &data)
 {
+
     putData("Recipes/" + userId + "/" + data["Name"].toString(), data);
-    data["id"] = data["Name"].toString();
     m_recipes.append(data);
+
+    emit addRecipeSuccess("OK");
 }

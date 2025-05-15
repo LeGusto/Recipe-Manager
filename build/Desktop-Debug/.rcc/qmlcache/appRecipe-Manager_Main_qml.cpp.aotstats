@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 66,
+                        "durationMicroseconds": 109,
                         "errorMessage": "Cannot access value for name AppCore",
                         "functionName": "target",
                         "line": 20
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 70,
                         "errorMessage": "Cannot access value for name AppCore",
                         "functionName": "onAuthenticationChanged",
                         "line": 21
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 33,
+                        "durationMicroseconds": 56,
                         "errorMessage": "Cannot access value for name AppCore",
                         "functionName": "target",
                         "line": 31
@@ -46,17 +46,17 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 43,
                         "errorMessage": "Cannot retrieve a non-object type by ID: stackView",
-                        "functionName": "onRecipesFetched",
+                        "functionName": "onFetchRecipesSuccess",
                         "line": 32
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 34,
                         "errorMessage": "Cannot retrieve a non-object type by ID: stackView",
-                        "functionName": "onUploadFail",
+                        "functionName": "onFetchRecipesFail",
                         "line": 36
                     }
                 ],

@@ -260,13 +260,13 @@
                                 "type": "QVariantMap"
                             }
                         ],
-                        "index": 4,
+                        "index": 8,
                         "name": "putData",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
-                        "index": 5,
+                        "index": 9,
                         "name": "fetchRecipes",
                         "returnType": "void"
                     },
@@ -278,7 +278,7 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 6,
+                        "index": 10,
                         "name": "deleteRecipe",
                         "returnType": "void"
                     },
@@ -290,7 +290,7 @@
                                 "type": "QVariantMap"
                             }
                         ],
-                        "index": 7,
+                        "index": 11,
                         "name": "addRecipe",
                         "returnType": "void"
                     }
@@ -322,7 +322,7 @@
                             }
                         ],
                         "index": 0,
-                        "name": "uploadDone",
+                        "name": "putDataSuccess",
                         "returnType": "void"
                     },
                     {
@@ -334,19 +334,31 @@
                             }
                         ],
                         "index": 1,
-                        "name": "uploadFail",
+                        "name": "putDataFail",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
                         "arguments": [
                             {
-                                "name": "recipes",
-                                "type": "QVariantList"
+                                "name": "response",
+                                "type": "QString"
                             }
                         ],
                         "index": 2,
-                        "name": "recipesFetched",
+                        "name": "fetchRecipesSuccess",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "error",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 3,
+                        "name": "fetchRecipesFail",
                         "returnType": "void"
                     },
                     {
@@ -357,8 +369,44 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 3,
-                        "name": "recipeDeleted",
+                        "index": 4,
+                        "name": "deleteRecipeSuccess",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "error",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 5,
+                        "name": "deleteRecipeFail",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "recipeName",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 6,
+                        "name": "addRecipeSuccess",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "error",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 7,
+                        "name": "addRecipeFail",
                         "returnType": "void"
                     }
                 ],
