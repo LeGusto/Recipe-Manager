@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 16,
-                        "durationMicroseconds": 263,
+                        "durationMicroseconds": 303,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 19
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 75,
+                        "durationMicroseconds": 119,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 17
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 23,
-                        "durationMicroseconds": 28,
+                        "durationMicroseconds": 50,
                         "errorMessage": "Cannot retrieve a non-object type by ID: loginPage",
                         "functionName": "hasError",
                         "line": 26
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 101,
+                        "durationMicroseconds": 206,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 33
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 23,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 37,
                         "errorMessage": "Cannot retrieve a non-object type by ID: loginPage",
                         "functionName": "hasError",
                         "line": 41
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 92,
+                        "durationMicroseconds": 158,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 47
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 102,
+                        "durationMicroseconds": 152,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 51
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 90,
+                        "durationMicroseconds": 139,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 62
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 84,
+                        "durationMicroseconds": 153,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 78
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 99,
+                        "durationMicroseconds": 123,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 87
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 56,
+                        "durationMicroseconds": 87,
                         "errorMessage": "Cannot access value for name AppCore",
                         "functionName": "target",
                         "line": 92

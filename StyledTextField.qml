@@ -1,6 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 
+// Text field that changes border color based on whether there is an error
 TextField {
     id: root
     property bool hasError: false
@@ -12,7 +13,9 @@ TextField {
         color: "transparent"
 
         Behavior on border.color {
-            ColorAnimation { duration: 200 }
+            ColorAnimation {
+                duration: 200
+            }
         }
     }
 }

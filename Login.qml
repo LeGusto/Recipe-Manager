@@ -7,10 +7,8 @@ Page {
     id: loginPage
     title: "Login"
 
-    property bool showError: false;
+    property bool showError: false
     signal loginFailed(string errorMessage)
-
-
 
     ColumnLayout {
 
@@ -18,6 +16,7 @@ Page {
         spacing: 20
         width: parent.width * 0.8
 
+        // Email input
         StyledTextField {
             Layout.fillWidth: true
             id: emailField
@@ -25,13 +24,14 @@ Page {
             text: "a@a.com"
             hasError: loginPage.showError
             onActiveFocusChanged: if (activeFocus) {
-                loginPage.showError = false
-                errorLabel.text = ""
-            }
-
+                                      loginPage.showError = false
+                                      errorLabel.text = ""
+                                  }
 
             Layout.alignment: Qt.AlignHCenter
         }
+
+        // Password input
         StyledTextField {
             Layout.fillWidth: true
             id: passwordField
@@ -40,13 +40,14 @@ Page {
             echoMode: TextInput.Password
             hasError: loginPage.showError
             onActiveFocusChanged: if (activeFocus) {
-                loginPage.showError = false
-                errorLabel.text = ""
-            }
+                                      loginPage.showError = false
+                                      errorLabel.text = ""
+                                  }
 
             Layout.alignment: Qt.AlignHCenter
         }
 
+        // Navigation
         RowLayout {
             Layout.alignment: Qt.AlignHCenter
             spacing: 20
@@ -56,7 +57,7 @@ Page {
                 text: "Back"
 
                 onClicked: {
-                    stackView.replace("Start.qml");
+                    stackView.replace("Start.qml")
                 }
 
                 Layout.alignment: Qt.AlignHCenter
@@ -70,15 +71,16 @@ Page {
                     onClicked: {
                         loginButton.enabled = false
                         loginButton.text = "Processing..."
-                        AppCore.authHandler.signIn(emailField.text, passwordField.text)
+                        AppCore.authHandler.signIn(emailField.text,
+                                                   passwordField.text)
                     }
                 }
-
 
                 Layout.alignment: Qt.AlignHCenter
             }
         }
 
+        // Label used to display the error if signin fails
         Label {
             id: errorLabel
             color: "red"
@@ -88,6 +90,7 @@ Page {
         }
     }
 
+    // Handle login error
     Connections {
         target: AppCore.authHandler
         function onSignInFailed(error) {

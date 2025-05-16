@@ -3,6 +3,7 @@ import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 import RecipeManager 1.0
 
+// Used by the user to create new recipes
 Page {
     id: recipeCreatorPage
     property string name: ""
@@ -11,6 +12,7 @@ Page {
     property ListModel ingredients: ListModel {}
     property bool showError: false
 
+    // Structure of each step card
     Component {
         id: stepComponent
 
@@ -65,6 +67,7 @@ Page {
         }
     }
 
+    // Structure of each ingredient
     Component {
         id: ingredientComponent
 
@@ -117,6 +120,7 @@ Page {
         }
     }
 
+    // Reusable label for input
     Component {
         id: nameLabelComponent
         Label {
@@ -126,6 +130,7 @@ Page {
         }
     }
 
+    // Display all the input options
     ScrollView {
         anchors.fill: parent
         padding: 20
@@ -145,6 +150,7 @@ Page {
                 }
             }
 
+            // Name input
             Rectangle {
                 width: parent.width
                 height: 60
@@ -157,13 +163,6 @@ Page {
                     anchors.fill: parent
                     anchors.margins: 10
                     color: "black"
-
-                    // background: Rectangle {
-                    //     radius: 6
-                    //     color: "whitesmoke"
-                    //     border.color: "#cccccc"
-                    //     border.width: 2
-                    // }
                     onActiveFocusChanged: if (activeFocus) {
                                               recipeCreatorPage.showError = false
                                               errorLabel.visible = false
@@ -195,6 +194,7 @@ Page {
                 }
             }
 
+            // Time to cook input
             Rectangle {
                 Layout.fillWidth: true
                 height: 60
@@ -230,6 +230,7 @@ Page {
                 }
             }
 
+            // List of entered ingredients
             ColumnLayout {
                 id: ingredientsColumn
                 Layout.fillWidth: true
@@ -242,6 +243,7 @@ Page {
                     onLoaded: item.text = "Ingredients"
                 }
 
+                // Shows all the ingredients in flow-style
                 Rectangle {
                     id: ingredientsList
                     Layout.fillWidth: true
@@ -294,6 +296,7 @@ Page {
                         }
                     }
 
+                    // Button to add the ingredient that was entered into input
                     Button {
                         text: "Add"
                         onClicked: newIngredientInput.accepted()
@@ -301,6 +304,7 @@ Page {
                 }
             }
 
+            // Displays all the steps
             ColumnLayout {
                 id: stepsColumn
                 Layout.fillWidth: true
@@ -327,6 +331,7 @@ Page {
                 }
             }
 
+            // Buttons to manage steps (pop most recent step or add one step)
             RowLayout {
                 Layout.alignment: Qt.AlignHCenter
                 width: parent.width * 0.9
@@ -352,6 +357,7 @@ Page {
         }
     }
 
+    // Validate submission input
     function validateInput() {
         for (var i = 0; i < AppCore.dbHandler.recipes.length; i++) {
             if (nameField.text.trim() === "") {
@@ -371,9 +377,12 @@ Page {
         return true
     }
 
+    // Navigation
     footer: RowLayout {
         width: parent.width
         spacing: 0
+
+        // Return to the recipe list without submitting
         Button {
             id: backButton
             text: "Back"
@@ -383,6 +392,7 @@ Page {
             Layout.preferredWidth: parent.width / 2
         }
 
+        // Submit recipe with the details that were entered
         Button {
             id: submitButton
             Layout.alignment: Qt.AlignHCenter
@@ -424,6 +434,7 @@ Page {
         }
     }
 
+    // Switch pages after successfully storing the recipe in the database
     Connections {
         target: AppCore.dbHandler
 

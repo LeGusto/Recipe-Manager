@@ -5,10 +5,12 @@ import RecipeManager 1.0
 Page {
     title: "Recipe Cards"
 
+    // Contains all the recipes
     ListModel {
         id: recipeModel
     }
 
+    // Converts the recipe steps object received from REST API to a suitable QML object
     function convertSteps(stepsArray) {
         var model = Qt.createQmlObject('import QtQuick 2.15; ListModel {}',
                                        parent)
@@ -23,6 +25,7 @@ Page {
         return model
     }
 
+    // Gets all the recipes stored in dbHandler
     function loadRecipes() {
         for (var i = 0; i < AppCore.dbHandler.recipes.length; i++) {
             var ingredientsTxt = "No ingredients"
@@ -47,6 +50,7 @@ Page {
         }
     }
 
+    // If everything is in order, loads the recipes into recipeModel
     Component.onCompleted: {
         if (AppCore && AppCore.dbHandler) {
             loadRecipes()
@@ -58,6 +62,7 @@ Page {
         }
     }
 
+    // Display the recipe cards
     ListView {
         id: recipeListView
         anchors.fill: parent
@@ -74,6 +79,7 @@ Page {
             width: ListView.view.width
             height: 120
 
+            // Rectangle for the background of the info
             Rectangle {
                 width: parent.width - 30
                 height: parent.height
@@ -82,6 +88,7 @@ Page {
                 border.color: "#e0e0e0"
                 anchors.horizontalCenter: parent.horizontalCenter
 
+                // Displays some info about the reipe
                 Column {
                     anchors.fill: parent
                     anchors.margins: 10
@@ -107,6 +114,7 @@ Page {
                     }
                 }
 
+                // Allows you to click the card to view a detailed version of the recipe
                 MouseArea {
                     anchors.fill: parent
                     onClicked: {
@@ -122,6 +130,7 @@ Page {
                     }
                 }
 
+                // Button for deleting the recipe
                 Button {
                     anchors.right: parent.right
                     anchors.verticalCenter: parent.verticalCenter
@@ -137,6 +146,7 @@ Page {
         }
     }
 
+    // Button for logging out
     header: Button {
         id: logoutBtn
         text: "Log Out"
@@ -149,6 +159,7 @@ Page {
         }
     }
 
+    // Button for adding a new recipe
     footer: Button {
         width: recipeListView.width - 30
         height: 50

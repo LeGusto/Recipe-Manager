@@ -6,6 +6,7 @@ Page {
     id: startPage
     title: "Start"
 
+    // Navigation
     RowLayout {
         anchors.centerIn: parent
         spacing: 20
@@ -15,17 +16,17 @@ Page {
             text: "Login"
 
             onClicked: {
-                stackView.replace("Login.qml");
+                stackView.replace("Login.qml")
             }
         }
+
         Button {
             id: signupButton
             text: "Sign Up"
 
             onClicked: {
-                stackView.replace("Signup.qml");
+                stackView.replace("Signup.qml")
             }
         }
     }
-
 }

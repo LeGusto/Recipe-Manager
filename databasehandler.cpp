@@ -8,6 +8,7 @@
 DatabaseHandler::DatabaseHandler(QNetworkAccessManager *manager, QObject *parent)
     : QObject(parent), networkManager(manager) {}
 
+// Puts data in the database with the given path
 void DatabaseHandler::putData(const QString &path, const QVariantMap &data)
 {
     QUrl url(baseUrl + "/" + path + ".json?auth=" + authToken);
@@ -60,6 +61,7 @@ void DatabaseHandler::fetchRecipes()
     });
 }
 
+// Deletes the recipe from the database and the recipe list (TODO for the recipe list)
 void DatabaseHandler::deleteRecipe(const QString &recipeName)
 {
     QUrl url(baseUrl + "/Recipes/" + userId + "/" + recipeName + ".json?auth=" + authToken);
@@ -80,6 +82,7 @@ void DatabaseHandler::deleteRecipe(const QString &recipeName)
     });
 }
 
+// Adds recipe to the database and the recipes property of dbHandler
 void DatabaseHandler::addRecipe(const QVariantMap &data)
 {
 

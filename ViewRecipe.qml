@@ -2,6 +2,7 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 
+// Used for a detailed inspection of a recipe (when you click on a recipe card)
 Page {
     id: viewRecipePage
     property var recipe: ({})
@@ -11,13 +12,14 @@ Page {
         contentWidth: parent.width
 
         ColumnLayout {
-
             width: parent.width
 
+            // Padding at the top
             Item {
                 height: 15
             }
 
+            // Background for the info
             Rectangle {
                 width: parent.width * 0.9
                 radius: 8
@@ -26,6 +28,7 @@ Page {
                 Layout.alignment: Qt.AlignHCenter
                 height: itemsLayout.implicitHeight + 20
 
+                // Displays all the actual info
                 ColumnLayout {
                     id: itemsLayout
                     width: parent.width
@@ -33,6 +36,7 @@ Page {
                     anchors.margins: 10
                     spacing: 5
 
+                    // Recipe name
                     Text {
                         text: recipe.name
                         font.bold: true
@@ -40,20 +44,23 @@ Page {
                         Layout.alignment: Qt.AlignHCenter
                     }
 
+                    // Time to cook
                     Text {
                         text: "⏱ " + recipe.hours + " hours " + recipe.minutes + " minutes"
                         font.pixelSize: 14
                         color: "gray"
                     }
 
+                    // Ingredients
                     Text {
-                        // width: Layout.fillWidth
                         Layout.fillWidth: true
                         text: recipe.ingredientsText
                         font.pixelSize: 14
 
                         wrapMode: Text.WordWrap
                     }
+
+                    // Displays all the steps
                     Repeater {
                         model: recipe.steps
                         delegate: ColumnLayout {
