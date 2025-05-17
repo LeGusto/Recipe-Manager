@@ -29,6 +29,7 @@ Page {
             RowLayout {
                 anchors.fill: parent
                 anchors.margins: 10
+                implicitHeight: contentHeight
                 spacing: 10
 
                 Label {
@@ -52,6 +53,9 @@ Page {
                     wrapMode: Text.Wrap
                     placeholderText: "Enter step..."
 
+                    Layout.preferredHeight: Math.max(
+                                                60,
+                                                textMeasure.paintedHeight + 12)
                     onTextChanged: {
                         if (stepNumber - 1 >= 0
                                 && stepNumber - 1 < steps.count) {

@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 16,
-                        "durationMicroseconds": 256,
+                        "durationMicroseconds": 347,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 16
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 126,
+                        "durationMicroseconds": 92,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 14
@@ -22,10 +22,10 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 23,
-                        "durationMicroseconds": 34,
+                        "durationMicroseconds": 46,
                         "errorMessage": "Cannot retrieve a non-object type by ID: signupPage",
                         "functionName": "hasError",
-                        "line": 22
+                        "line": 23
                     },
                     {
                         "codegenSuccessfull": false,
@@ -33,12 +33,12 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"activeFocusChanged\".",
                         "functionName": "onActiveFocusChanged",
-                        "line": 23
+                        "line": 24
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 118,
+                        "durationMicroseconds": 131,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 29
@@ -46,10 +46,10 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 23,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 34,
                         "errorMessage": "Cannot retrieve a non-object type by ID: signupPage",
                         "functionName": "hasError",
-                        "line": 36
+                        "line": 37
                     },
                     {
                         "codegenSuccessfull": false,
@@ -57,23 +57,23 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"activeFocusChanged\".",
                         "functionName": "onActiveFocusChanged",
-                        "line": 37
+                        "line": 38
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 79,
+                        "durationMicroseconds": 888,
                         "errorMessage": "",
                         "functionName": "alignment",
-                        "line": 46
+                        "line": 47
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 36,
-                        "durationMicroseconds": 4,
+                        "durationMicroseconds": 6,
                         "errorMessage": "Instruction \"generate_MoveRegExp\" not implemented",
                         "functionName": "regularExpression",
-                        "line": 43
+                        "line": 44
                     },
                     {
                         "codegenSuccessfull": false,
@@ -81,7 +81,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find property \"echoMode\".",
                         "functionName": "echoMode",
-                        "line": 53
+                        "line": 55
                     },
                     {
                         "codegenSuccessfull": false,
@@ -89,7 +89,7 @@
                         "durationMicroseconds": 26,
                         "errorMessage": "Cannot retrieve a non-object type by ID: signupPage",
                         "functionName": "hasError",
-                        "line": 54
+                        "line": 56
                     },
                     {
                         "codegenSuccessfull": false,
@@ -97,15 +97,15 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"activeFocusChanged\".",
                         "functionName": "onActiveFocusChanged",
-                        "line": 55
+                        "line": 57
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 77,
+                        "durationMicroseconds": 126,
                         "errorMessage": "",
                         "functionName": "alignment",
-                        "line": 61
+                        "line": 62
                     },
                     {
                         "codegenSuccessfull": false,
@@ -113,15 +113,15 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find property \"echoMode\".",
                         "functionName": "echoMode",
-                        "line": 68
+                        "line": 70
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 23,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 34,
                         "errorMessage": "Cannot retrieve a non-object type by ID: signupPage",
                         "functionName": "hasError",
-                        "line": 69
+                        "line": 71
                     },
                     {
                         "codegenSuccessfull": false,
@@ -129,23 +129,23 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"activeFocusChanged\".",
                         "functionName": "onActiveFocusChanged",
-                        "line": 70
+                        "line": 73
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 106,
+                        "durationMicroseconds": 102,
                         "errorMessage": "",
                         "functionName": "alignment",
-                        "line": 76
+                        "line": 78
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 127,
+                        "durationMicroseconds": 89,
                         "errorMessage": "",
                         "functionName": "alignment",
-                        "line": 80
+                        "line": 83
                     },
                     {
                         "codegenSuccessfull": false,
@@ -153,7 +153,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"clicked\".",
                         "functionName": "onClicked",
-                        "line": 86
+                        "line": 89
                     },
                     {
                         "codegenSuccessfull": false,
@@ -161,7 +161,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"clicked\".",
                         "functionName": "onClicked",
-                        "line": 94
+                        "line": 97
                     },
                     {
                         "codegenSuccessfull": false,
@@ -169,23 +169,23 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find property \"wrapMode\".",
                         "functionName": "wrapMode",
-                        "line": 127
+                        "line": 132
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 142,
+                        "durationMicroseconds": 86,
                         "errorMessage": "",
                         "functionName": "alignment",
-                        "line": 129
+                        "line": 134
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 77,
+                        "durationMicroseconds": 54,
                         "errorMessage": "Cannot access value for name AppCore",
                         "functionName": "target",
-                        "line": 134
+                        "line": 140
                     },
                     {
                         "codegenSuccessfull": false,
@@ -193,23 +193,23 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Functions without type annotations won't be compiled",
                         "functionName": "onSignUpFailed",
-                        "line": 135
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 9,
-                        "durationMicroseconds": 43,
-                        "errorMessage": "Cannot retrieve a non-object type by ID: signupButton",
-                        "functionName": "onSignUpCompleted",
                         "line": 141
                     },
                     {
                         "codegenSuccessfull": false,
+                        "column": 9,
+                        "durationMicroseconds": 27,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: signupButton",
+                        "functionName": "onSignUpCompleted",
+                        "line": 147
+                    },
+                    {
+                        "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 18,
                         "errorMessage": "Cannot retrieve a non-object type by ID: signupPage",
                         "functionName": "target",
-                        "line": 149
+                        "line": 156
                     },
                     {
                         "codegenSuccessfull": false,
@@ -217,7 +217,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Functions without type annotations won't be compiled",
                         "functionName": "onSignupFailed",
-                        "line": 150
+                        "line": 157
                     }
                 ],
                 "filepath": "/home/LeGusto/Documents/Recipe-Manager/Signup.qml"

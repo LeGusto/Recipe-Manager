@@ -40,24 +40,65 @@ Page {
                     Text {
                         text: recipe.name
                         font.bold: true
-                        font.pixelSize: 18
+                        font.pixelSize: 30
                         Layout.alignment: Qt.AlignHCenter
                     }
 
                     // Time to cook
-                    Text {
+                    Label {
                         text: "⏱ " + recipe.hours + " hours " + recipe.minutes + " minutes"
                         font.pixelSize: 14
                         color: "gray"
+                        Layout.alignment: Qt.AlignHCenter
                     }
 
-                    // Ingredients
-                    Text {
+                    Label {
+                        text: "Ingredients"
+                        color: "black"
+                        font.pixelSize: 24
                         Layout.fillWidth: true
-                        text: recipe.ingredientsText
-                        font.pixelSize: 14
+                        horizontalAlignment: Text.AlignHCenter
+                    }
 
-                        wrapMode: Text.WordWrap
+                    // Display all the ingredients
+                    Repeater {
+                        model: recipe.ingredients
+                        delegate: ColumnLayout {
+                            Layout.fillWidth: true
+                            spacing: 5
+
+                            RowLayout {
+                                spacing: 10
+                                Layout.fillWidth: true
+
+                                Rectangle {
+                                    width: 25
+                                    height: 25
+                                    radius: 12.5
+                                    color: "black"
+
+                                    Label {
+                                        text: index + 1
+                                        color: "white"
+                                        anchors.centerIn: parent
+                                    }
+                                }
+                                Label {
+                                    text: modelData
+                                    color: "black"
+                                    wrapMode: Text.Wrap
+                                    Layout.fillWidth: true
+                                }
+                            }
+                        }
+                    }
+
+                    Label {
+                        text: "Steps"
+                        color: "black"
+                        font.pixelSize: 24
+                        Layout.fillWidth: true
+                        horizontalAlignment: Text.AlignHCenter
                     }
 
                     // Displays all the steps
@@ -72,10 +113,11 @@ Page {
                                 Layout.fillWidth: true
 
                                 Rectangle {
+                                    Layout.alignment: Qt.AlignTop
                                     width: 25
                                     height: 25
                                     radius: 12.5
-                                    color: "#6200ee"
+                                    color: "black"
 
                                     Label {
                                         text: index + 1

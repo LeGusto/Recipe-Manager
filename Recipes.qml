@@ -14,12 +14,24 @@ Page {
     function convertSteps(stepsArray) {
         var model = Qt.createQmlObject('import QtQuick 2.15; ListModel {}',
                                        parent)
-
         if (!stepsArray)
             return model
         stepsArray.forEach(function (step) {
             model.append({
                              "stepText": step
+                         })
+        })
+        return model
+    }
+
+    function convertIngredients(ingredientsArray) {
+        var model = Qt.createQmlObject('import QtQuick 2.15; ListModel {}',
+                                       parent)
+        if (!ingredientsArray)
+            return model
+        ingredientsArray.forEach(function (step) {
+            model.append({
+                             "ingredientText": step
                          })
         })
         return model
@@ -45,7 +57,9 @@ Page {
                                    "recipeId"// stepsArray: stepsArray,
                                    : AppCore.dbHandler.recipes[i].id || "No Id",
                                    "steps": convertSteps(
-                                                AppCore.dbHandler.recipes[i].Steps)
+                                                AppCore.dbHandler.recipes[i].Steps),
+                                   "ingredients": convertIngredients(
+                                                      AppCore.dbHandler.recipes[i].Ingredients)
                                })
         }
     }
@@ -123,6 +137,7 @@ Page {
                                                "name": name,
                                                "hours": hours,
                                                "minutes": minutes,
+                                               "ingredients": ingredients,
                                                "ingredientsText": ingredientsText,
                                                "steps": steps
                                            }
@@ -143,6 +158,9 @@ Page {
                     }
                 }
             }
+        }
+        footer: Item {
+            height: 15
         }
     }
 

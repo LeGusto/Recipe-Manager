@@ -15,29 +15,30 @@ Page {
         spacing: 20
         width: parent.width * 0.8
 
+        // Name input area
         StyledTextField {
             Layout.fillWidth: true
             id: nameField
             placeholderText: "Full Name"
             hasError: signupPage.showError && text.trim() === ""
             onActiveFocusChanged: if (activeFocus) {
-                signupPage.showError = false
-                errorLabel.text = "";
-            }
-
+                                      signupPage.showError = false
+                                      errorLabel.text = ""
+                                  }
 
             Layout.alignment: Qt.AlignHCenter
         }
 
+        // Email input area
         StyledTextField {
             Layout.fillWidth: true
             id: emailField
             placeholderText: "Email"
             hasError: signupPage.showError && !acceptableInput
             onActiveFocusChanged: if (activeFocus) {
-                signupPage.showError = false
-                errorLabel.text = "";
-            }
+                                      signupPage.showError = false
+                                      errorLabel.text = ""
+                                  }
 
             validator: RegularExpressionValidator {
                 regularExpression: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
@@ -46,6 +47,7 @@ Page {
             Layout.alignment: Qt.AlignHCenter
         }
 
+        // Password input area
         StyledTextField {
             Layout.fillWidth: true
             id: passwordField
@@ -53,29 +55,30 @@ Page {
             echoMode: TextInput.Password
             hasError: signupPage.showError && text.length < 8
             onActiveFocusChanged: if (activeFocus) {
-                signupPage.showError = false
-                errorLabel.text = "";
-            }
-
+                                      signupPage.showError = false
+                                      errorLabel.text = ""
+                                  }
 
             Layout.alignment: Qt.AlignHCenter
         }
 
+        // Password confimation input area
         StyledTextField {
             Layout.fillWidth: true
             id: confirmPasswordField
             placeholderText: "Confirm Password"
             echoMode: TextInput.Password
-            hasError: signupPage.showError && (text !== passwordField.text || text === "")
+            hasError: signupPage.showError && (text !== passwordField.text
+                                               || text === "")
             onActiveFocusChanged: if (activeFocus) {
-                signupPage.showError = false
-                errorLabel.text = ""
-            }
-
+                                      signupPage.showError = false
+                                      errorLabel.text = ""
+                                  }
 
             Layout.alignment: Qt.AlignHCenter
         }
 
+        // Navigation buttons
         RowLayout {
             Layout.alignment: Qt.AlignHCenter
             spacing: 20
@@ -116,11 +119,13 @@ Page {
                     signupButton.enabled = false
                     signupButton.text = "Processing..."
 
-                    AppCore.authHandler.signUp(emailField.text, passwordField.text)
+                    AppCore.authHandler.signUp(emailField.text,
+                                               passwordField.text)
                 }
             }
         }
 
+        // Label that appears when the input is incorrect
         Label {
             id: errorLabel
             color: "red"
@@ -130,6 +135,7 @@ Page {
         }
     }
 
+    // Wait for the database to process the signup
     Connections {
         target: AppCore.authHandler
         function onSignUpFailed(error) {
@@ -145,6 +151,7 @@ Page {
         }
     }
 
+    // Update the error label text
     Connections {
         target: signupPage
         function onSignupFailed(errorMessage) {

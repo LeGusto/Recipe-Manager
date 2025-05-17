@@ -6,10 +6,10 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 127,
+                        "durationMicroseconds": 326,
                         "errorMessage": "",
                         "functionName": "centerIn",
-                        "line": 10
+                        "line": 11
                     },
                     {
                         "codegenSuccessfull": false,
@@ -17,7 +17,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"clicked\".",
                         "functionName": "onClicked",
-                        "line": 17
+                        "line": 18
                     },
                     {
                         "codegenSuccessfull": false,
@@ -25,7 +25,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"clicked\".",
                         "functionName": "onClicked",
-                        "line": 25
+                        "line": 27
                     }
                 ],
                 "filepath": "/home/LeGusto/Documents/Recipe-Manager/Start.qml"
