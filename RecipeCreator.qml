@@ -39,6 +39,7 @@ Page {
                     verticalAlignment: Text.AlignTop
                 }
 
+                // TODO make the area grow with more text
                 TextArea {
                     color: "black"
                     background: Rectangle {
@@ -53,9 +54,9 @@ Page {
                     wrapMode: Text.Wrap
                     placeholderText: "Enter step..."
 
-                    Layout.preferredHeight: Math.max(
-                                                60,
-                                                textMeasure.paintedHeight + 12)
+                    // Layout.preferredHeight: Math.max(
+                    // 60,
+                    // textMeasure.paintedHeight + 12)
                     onTextChanged: {
                         if (stepNumber - 1 >= 0
                                 && stepNumber - 1 < steps.count) {
