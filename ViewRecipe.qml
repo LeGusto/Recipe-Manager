@@ -9,7 +9,11 @@ Page {
 
     ScrollView {
         anchors.fill: parent
-        contentWidth: parent.width
+        padding: 20
+        contentWidth: parent.width * 0.9
+        contentHeight: formLayout.height
+        ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
+        ScrollBar.vertical.policy: ScrollBar.AlwaysOff
 
         ColumnLayout {
             width: parent.width
@@ -21,7 +25,7 @@ Page {
 
             // Background for the info
             Rectangle {
-                width: parent.width * 0.9
+                width: parent.width
                 radius: 8
                 color: "white"
                 border.color: "#e0e0e0"
@@ -46,10 +50,17 @@ Page {
 
                     // Time to cook
                     Label {
-                        text: "⏱ " + recipe.hours + " hours " + recipe.minutes + " minutes"
+                        text: "⏱ " + hours + " hour" + (hours != 1 ? "s " : " ")
+                              + minutes + " minute" + (minutes != 1 ? "s " : " ")
                         font.pixelSize: 14
                         color: "gray"
                         Layout.alignment: Qt.AlignHCenter
+                    }
+
+                    Rectangle {
+                        Layout.fillWidth: true
+                        color: "black"
+                        height: 5
                     }
 
                     Label {
@@ -91,6 +102,12 @@ Page {
                                 }
                             }
                         }
+                    }
+
+                    Rectangle {
+                        Layout.fillWidth: true
+                        color: "black"
+                        height: 5
                     }
 
                     Label {

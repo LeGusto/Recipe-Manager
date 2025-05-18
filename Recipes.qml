@@ -115,12 +115,15 @@ Page {
                     }
 
                     Text {
-                        text: "⏱ " + hours + " hours " + minutes + " minutes"
+                        text: "⏱ " + hours + " hour" + (hours != 1 ? "s " : " ")
+                              + minutes + " minute" + (minutes != 1 ? "s " : " ")
                         font.pixelSize: 14
                         color: "gray"
                     }
 
                     Text {
+                        maximumLineCount: 2
+                        elide: Text.ElideRight
                         width: parent.width
                         text: ingredientsText
                         font.pixelSize: 14

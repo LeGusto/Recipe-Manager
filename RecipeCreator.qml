@@ -21,15 +21,15 @@ Page {
             property string stepText
 
             width: recipeCreatorPage.width * 0.9
-            height: 100
+            height: rowLayout.implicitHeight + 20
             radius: 8
             color: "white"
             border.color: "#e0e0e0"
 
             RowLayout {
+                id: rowLayout
                 anchors.fill: parent
                 anchors.margins: 10
-                implicitHeight: contentHeight
                 spacing: 10
 
                 Label {
@@ -39,24 +39,22 @@ Page {
                     verticalAlignment: Text.AlignTop
                 }
 
-                // TODO make the area grow with more text
                 TextArea {
+                    id: stepField
                     color: "black"
+                    Layout.fillWidth: true
+                    wrapMode: Text.Wrap
+                    placeholderText: "Enter step..."
+
+                    Layout.preferredHeight: Math.max(60, contentHeight + 20)
+
                     background: Rectangle {
                         radius: 8
                         color: "whitesmoke"
                         border.color: "#cccccc"
                         border.width: 2
                     }
-                    id: stepField
-                    Layout.fillWidth: true
-                    Layout.fillHeight: true
-                    wrapMode: Text.Wrap
-                    placeholderText: "Enter step..."
 
-                    // Layout.preferredHeight: Math.max(
-                    // 60,
-                    // textMeasure.paintedHeight + 12)
                     onTextChanged: {
                         if (stepNumber - 1 >= 0
                                 && stepNumber - 1 < steps.count) {
@@ -64,10 +62,6 @@ Page {
                         }
                     }
                 }
-            }
-
-            Connections {
-                target: stepComponent
             }
         }
     }
