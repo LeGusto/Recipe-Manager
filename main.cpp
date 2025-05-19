@@ -11,6 +11,12 @@ int main(int argc, char *argv[])
                                           return new AppCore();
                                       });
 
+    qmlRegisterSingletonType(QUrl::fromLocalFile(QCoreApplication::applicationDirPath()
+                                                 + "/Recipe-Manager/Theme.qml"),
+                             "AppTheme",
+                             1,
+                             0,
+                             "Theme");
 
     QQmlApplicationEngine engine;
     QObject::connect(

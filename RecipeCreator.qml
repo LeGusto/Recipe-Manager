@@ -2,6 +2,7 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 import RecipeManager 1.0
+import AppTheme 1.0
 
 // Used by the user to create new recipes
 Page {
@@ -11,6 +12,10 @@ Page {
     property ListModel steps: ListModel {}
     property ListModel ingredients: ListModel {}
     property bool showError: false
+
+    background: Rectangle {
+        color: Theme.backgroundColor
+    }
 
     // Structure of each step card
     Component {
@@ -24,7 +29,8 @@ Page {
             height: rowLayout.implicitHeight + 20
             radius: 8
             color: "white"
-            border.color: "#e0e0e0"
+            border.color: "#FAD59A"
+            border.width: 2
 
             RowLayout {
                 id: rowLayout
@@ -76,7 +82,8 @@ Page {
             height: 40
             radius: 15
             color: "#f0f0f0"
-            border.color: "#cccccc"
+            border.color: "#FAD59A"
+            border.width: 2
             property string ingredientText: ""
             property int ingredientId: 0
 
@@ -90,9 +97,9 @@ Page {
                 maximumLineCount: 1
             }
 
-            Button {
-                implicitWidth: 30
-                implicitHeight: 30
+            ButtonStyled1 {
+                implicitWidth: 26
+                implicitHeight: 26
                 anchors {
                     right: parent.right
                     top: parent.top
@@ -135,6 +142,8 @@ Page {
         padding: 20
         contentWidth: parent.width * 0.9
         contentHeight: formLayout.height
+        ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
+        ScrollBar.vertical.policy: ScrollBar.AlwaysOff
 
         ColumnLayout {
             id: formLayout
@@ -155,13 +164,14 @@ Page {
                 height: 60
                 radius: 8
                 color: "white"
-                border.color: "#e0e0e0"
+                border.color: "#FAD59A"
+                border.width: 2
 
                 StyledTextField {
                     id: nameField
                     anchors.fill: parent
                     anchors.margins: 10
-                    color: "black"
+                    // color: "black"
                     onActiveFocusChanged: if (activeFocus) {
                                               recipeCreatorPage.showError = false
                                               errorLabel.visible = false
@@ -199,7 +209,8 @@ Page {
                 height: 60
                 radius: 8
                 color: "white"
-                border.color: "#e0e0e0"
+                border.color: "#FAD59A"
+                border.width: 2
 
                 RowLayout {
                     anchors.centerIn: parent
@@ -215,6 +226,11 @@ Page {
                         from: 0
                         to: 99
                         value: 0
+
+                        background: Rectangle {
+                            color: hovered ? "#3E4143" : "#313435" // Subtle background color change
+                            radius: 4
+                        }
                     }
                     Label {
                         color: "black"
@@ -223,8 +239,13 @@ Page {
                     SpinBox {
                         id: minutesTime
                         from: 0
-                        to: 60
+                        to: 59
                         value: 0
+
+                        background: Rectangle {
+                            color: hovered ? "#3E4143" : "#313435" // Subtle background color change
+                            radius: 4
+                        }
                     }
                 }
             }
@@ -249,7 +270,8 @@ Page {
                     implicitHeight: Math.max(50, ingredientsFlow.height + 20)
                     radius: 8
                     color: "white"
-                    border.color: "#e0e0e0"
+                    border.color: "#FAD59A"
+                    border.width: 2
 
                     Flow {
                         id: ingredientsFlow
@@ -277,8 +299,9 @@ Page {
                 RowLayout {
                     id: ingredientButtons
                     spacing: 10
+                    Layout.alignment: Qt.AlignHCenter
 
-                    TextField {
+                    StyledTextField {
                         id: newIngredientInput
                         property int countId: 0
 
@@ -293,10 +316,12 @@ Page {
                                 countId++
                             }
                         }
+
+                        placeholderText: "Name and quantity"
                     }
 
                     // Button to add the ingredient that was entered into input
-                    Button {
+                    ButtonStyled1 {
                         text: "Add"
                         onClicked: newIngredientInput.accepted()
                     }
@@ -336,7 +361,7 @@ Page {
                 width: parent.width * 0.9
                 spacing: 10
 
-                Button {
+                ButtonStyled1 {
                     Layout.alignment: Qt.AlignHCenter
                     text: "+ Add Step"
                     onClicked: steps.append({
@@ -344,7 +369,7 @@ Page {
                                             })
                 }
 
-                Button {
+                ButtonStyled1 {
                     Layout.alignment: Qt.AlignHCenter
                     text: "- Remove Step"
                     onClicked: {
@@ -382,7 +407,7 @@ Page {
         spacing: 0
 
         // Return to the recipe list without submitting
-        Button {
+        NavButton {
             id: backButton
             text: "Back"
             onClicked: stackView.replace("Recipes.qml")
@@ -392,7 +417,7 @@ Page {
         }
 
         // Submit recipe with the details that were entered
-        Button {
+        NavButton {
             id: submitButton
             Layout.alignment: Qt.AlignHCenter
             text: "Save Recipe"

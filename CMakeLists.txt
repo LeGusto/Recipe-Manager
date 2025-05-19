@@ -31,6 +31,12 @@ qt_add_qml_module(appRecipe-Manager
         QML_FILES StyledTextField.qml
         QML_FILES RecipeCreator.qml
         QML_FILES ViewRecipe.qml
+        QML_FILES ButtonStyled1.qml
+        QML_FILES Theme.qml
+        RESOURCES
+        RESOURCES
+        SOURCES
+        QML_FILES NavButton.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

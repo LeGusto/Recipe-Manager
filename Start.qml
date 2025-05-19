@@ -1,31 +1,51 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
+import AppTheme 1.0
 
 Page {
     id: startPage
     title: "Start"
+    background: Rectangle {
+        color: Theme.backgroundColor
+    }
 
-    // Navigation
-    RowLayout {
+    ColumnLayout {
         anchors.centerIn: parent
-        spacing: 20
+        spacing: 100
+        width: parent.width * 0.8
 
-        Button {
-            id: loginButton
-            text: "Login"
+        Text {
+            text: "Recipe Manager"
+            font.pixelSize: 36
+            // style: Text.Outline
+            // styleColor: "#FCEFCB"
+            color: "#FCEFCB"
 
-            onClicked: {
-                stackView.replace("Login.qml")
-            }
+            Layout.alignment: Qt.AlignHCenter
         }
 
-        Button {
-            id: signupButton
-            text: "Sign Up"
+        // Navigation
+        RowLayout {
+            Layout.alignment: Qt.AlignHCenter
+            spacing: 20
 
-            onClicked: {
-                stackView.replace("Signup.qml")
+            ButtonStyled1 {
+                id: loginButton
+                text: "Login"
+
+                onClicked: {
+                    stackView.replace("Login.qml")
+                }
+            }
+
+            ButtonStyled1 {
+                id: signupButton
+                text: "Sign Up"
+
+                onClicked: {
+                    stackView.replace("Signup.qml")
+                }
             }
         }
     }

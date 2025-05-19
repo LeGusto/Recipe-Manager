@@ -8,6 +8,9 @@
     <file alias="StyledTextField.qml">/home/LeGusto/Documents/Recipe-Manager/StyledTextField.qml</file>
     <file alias="RecipeCreator.qml">/home/LeGusto/Documents/Recipe-Manager/RecipeCreator.qml</file>
     <file alias="ViewRecipe.qml">/home/LeGusto/Documents/Recipe-Manager/ViewRecipe.qml</file>
+    <file alias="ButtonStyled1.qml">/home/LeGusto/Documents/Recipe-Manager/ButtonStyled1.qml</file>
+    <file alias="Theme.qml">/home/LeGusto/Documents/Recipe-Manager/Theme.qml</file>
+    <file alias="NavButton.qml">/home/LeGusto/Documents/Recipe-Manager/NavButton.qml</file>
   </qresource>
 </RCC>
 

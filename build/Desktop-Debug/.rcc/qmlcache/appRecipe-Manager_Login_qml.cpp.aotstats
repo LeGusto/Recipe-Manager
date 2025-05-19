@@ -4,28 +4,36 @@
             {
                 "entries": [
                     {
+                        "codegenSuccessfull": false,
+                        "column": 16,
+                        "durationMicroseconds": 144,
+                        "errorMessage": "Cannot access value for name Theme",
+                        "functionName": "color",
+                        "line": 11
+                    },
+                    {
                         "codegenSuccessfull": true,
                         "column": 16,
-                        "durationMicroseconds": 237,
+                        "durationMicroseconds": 216,
                         "errorMessage": "",
                         "functionName": "width",
-                        "line": 17
+                        "line": 21
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 72,
+                        "durationMicroseconds": 63,
                         "errorMessage": "",
                         "functionName": "centerIn",
-                        "line": 15
+                        "line": 19
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 23,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 24,
                         "errorMessage": "Cannot retrieve a non-object type by ID: loginPage",
                         "functionName": "hasError",
-                        "line": 25
+                        "line": 29
                     },
                     {
                         "codegenSuccessfull": false,
@@ -33,15 +41,15 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"activeFocusChanged\".",
                         "functionName": "onActiveFocusChanged",
-                        "line": 26
+                        "line": 30
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 112,
+                        "durationMicroseconds": 83,
                         "errorMessage": "",
                         "functionName": "alignment",
-                        "line": 31
+                        "line": 35
                     },
                     {
                         "codegenSuccessfull": false,
@@ -49,15 +57,15 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find property \"echoMode\".",
                         "functionName": "echoMode",
-                        "line": 40
+                        "line": 44
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 23,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 16,
                         "errorMessage": "Cannot retrieve a non-object type by ID: loginPage",
                         "functionName": "hasError",
-                        "line": 41
+                        "line": 45
                     },
                     {
                         "codegenSuccessfull": false,
@@ -65,23 +73,23 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"activeFocusChanged\".",
                         "functionName": "onActiveFocusChanged",
-                        "line": 42
+                        "line": 46
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 99,
+                        "durationMicroseconds": 77,
                         "errorMessage": "",
                         "functionName": "alignment",
-                        "line": 47
+                        "line": 51
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 97,
+                        "durationMicroseconds": 73,
                         "errorMessage": "",
                         "functionName": "alignment",
-                        "line": 52
+                        "line": 56
                     },
                     {
                         "codegenSuccessfull": false,
@@ -89,31 +97,31 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"clicked\".",
                         "functionName": "onClicked",
-                        "line": 59
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 35,
-                        "durationMicroseconds": 85,
-                        "errorMessage": "",
-                        "functionName": "alignment",
                         "line": 63
                     },
                     {
+                        "codegenSuccessfull": true,
+                        "column": 35,
+                        "durationMicroseconds": 66,
+                        "errorMessage": "",
+                        "functionName": "alignment",
+                        "line": 67
+                    },
+                    {
                         "codegenSuccessfull": false,
                         "column": 28,
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"clicked\".",
                         "functionName": "onClicked",
-                        "line": 70
+                        "line": 74
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 87,
+                        "durationMicroseconds": 82,
                         "errorMessage": "",
                         "functionName": "alignment",
-                        "line": 79
+                        "line": 83
                     },
                     {
                         "codegenSuccessfull": false,
@@ -121,23 +129,23 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find property \"wrapMode\".",
                         "functionName": "wrapMode",
-                        "line": 87
+                        "line": 91
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 81,
+                        "durationMicroseconds": 72,
                         "errorMessage": "",
                         "functionName": "alignment",
-                        "line": 89
+                        "line": 93
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 50,
+                        "durationMicroseconds": 38,
                         "errorMessage": "Cannot access value for name AppCore",
                         "functionName": "target",
-                        "line": 95
+                        "line": 99
                     },
                     {
                         "codegenSuccessfull": false,
@@ -145,7 +153,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Functions without type annotations won't be compiled",
                         "functionName": "onSignInFailed",
-                        "line": 96
+                        "line": 100
                     }
                 ],
                 "filepath": "/home/LeGusto/Documents/Recipe-Manager/Login.qml"

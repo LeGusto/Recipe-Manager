@@ -67,6 +67,13 @@ void DatabaseHandler::deleteRecipe(const QString &recipeName)
     QUrl url(baseUrl + "/Recipes/" + userId + "/" + recipeName + ".json?auth=" + authToken);
     QNetworkRequest request(url);
 
+    for (int i = 0; i < m_recipes.size(); ++i) {
+        if (m_recipes[i].toMap()["Name"].toString() == recipeName) {
+            m_recipes.removeAt(i);
+            break;
+        }
+    }
+
     QNetworkReply *reply = networkManager->deleteResource(request);
 
     connect(reply, &QNetworkReply::finished, [=]() {

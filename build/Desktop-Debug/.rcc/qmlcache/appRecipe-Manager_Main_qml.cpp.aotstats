@@ -22,42 +22,42 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 69,
+                        "durationMicroseconds": 83,
                         "errorMessage": "Cannot access value for name AppCore",
                         "functionName": "target",
-                        "line": 20
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 9,
-                        "durationMicroseconds": 47,
-                        "errorMessage": "Cannot access value for name AppCore",
-                        "functionName": "onAuthenticationChanged",
                         "line": 21
                     },
                     {
                         "codegenSuccessfull": false,
-                        "column": 17,
-                        "durationMicroseconds": 37,
+                        "column": 9,
+                        "durationMicroseconds": 60,
                         "errorMessage": "Cannot access value for name AppCore",
-                        "functionName": "target",
-                        "line": 31
+                        "functionName": "onAuthenticationChanged",
+                        "line": 22
                     },
                     {
                         "codegenSuccessfull": false,
-                        "column": 9,
-                        "durationMicroseconds": 28,
-                        "errorMessage": "Cannot retrieve a non-object type by ID: stackView",
-                        "functionName": "onFetchRecipesSuccess",
+                        "column": 17,
+                        "durationMicroseconds": 44,
+                        "errorMessage": "Cannot access value for name AppCore",
+                        "functionName": "target",
                         "line": 32
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 23,
+                        "durationMicroseconds": 24,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: stackView",
+                        "functionName": "onFetchRecipesSuccess",
+                        "line": 33
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 9,
+                        "durationMicroseconds": 20,
                         "errorMessage": "Cannot retrieve a non-object type by ID: stackView",
                         "functionName": "onFetchRecipesFail",
-                        "line": 36
+                        "line": 37
                     }
                 ],
                 "filepath": "/home/LeGusto/Documents/Recipe-Manager/Main.qml"

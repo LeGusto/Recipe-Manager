@@ -18,6 +18,12 @@ set(src_and_dest_list
     "/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/Recipe-Manager/RecipeCreator.qml"
     "/home/LeGusto/Documents/Recipe-Manager/ViewRecipe.qml"
     "/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/Recipe-Manager/ViewRecipe.qml"
+    "/home/LeGusto/Documents/Recipe-Manager/ButtonStyled1.qml"
+    "/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/Recipe-Manager/ButtonStyled1.qml"
+    "/home/LeGusto/Documents/Recipe-Manager/Theme.qml"
+    "/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/Recipe-Manager/Theme.qml"
+    "/home/LeGusto/Documents/Recipe-Manager/NavButton.qml"
+    "/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/Recipe-Manager/NavButton.qml"
 
 )
 set(timestamp_file "/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/.qt/appRecipe-Manager_qml.txt")

@@ -2,10 +2,14 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 import RecipeManager 1.0
+import AppTheme 1.0
 
 Page {
     id: loginPage
     title: "Login"
+    background: Rectangle {
+        color: Theme.backgroundColor
+    }
 
     property bool showError: false
     signal loginFailed(string errorMessage)
@@ -52,7 +56,7 @@ Page {
             Layout.alignment: Qt.AlignHCenter
             spacing: 20
 
-            Button {
+            ButtonStyled1 {
                 id: backButton
                 text: "Back"
 
@@ -63,7 +67,7 @@ Page {
                 Layout.alignment: Qt.AlignHCenter
             }
 
-            Button {
+            ButtonStyled1 {
                 id: loginButton
                 text: "Login"
 
@@ -96,7 +100,7 @@ Page {
         function onSignInFailed(error) {
             showError = true
             errorLabel.text = error
-            loginButton.enabled = false
+            loginButton.enabled = true
             loginButton.text = "Login"
         }
     }

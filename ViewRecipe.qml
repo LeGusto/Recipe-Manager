@@ -1,17 +1,20 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
+import AppTheme 1.0
 
 // Used for a detailed inspection of a recipe (when you click on a recipe card)
 Page {
     id: viewRecipePage
     property var recipe: ({})
+    background: Rectangle {
+        color: Theme.backgroundColor
+    }
 
     ScrollView {
         anchors.fill: parent
         padding: 20
         contentWidth: parent.width * 0.9
-        contentHeight: formLayout.height
         ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
         ScrollBar.vertical.policy: ScrollBar.AlwaysOff
 
@@ -28,7 +31,8 @@ Page {
                 width: parent.width
                 radius: 8
                 color: "white"
-                border.color: "#e0e0e0"
+                border.color: "#FAD59A"
+                border.width: 2
                 Layout.alignment: Qt.AlignHCenter
                 height: itemsLayout.implicitHeight + 20
 
@@ -50,8 +54,8 @@ Page {
 
                     // Time to cook
                     Label {
-                        text: "⏱ " + hours + " hour" + (hours != 1 ? "s " : " ")
-                              + minutes + " minute" + (minutes != 1 ? "s " : " ")
+                        text: "⏱ " + recipe.hours + " hour" + (recipe.hours != 1 ? "s " : " ")
+                              + recipe.minutes + " minute" + (recipe.minutes != 1 ? "s " : " ")
                         font.pixelSize: 14
                         color: "gray"
                         Layout.alignment: Qt.AlignHCenter
@@ -156,7 +160,7 @@ Page {
         }
     }
 
-    footer: Button {
+    footer: NavButton {
         text: "Back"
         highlighted: true
         onClicked: stackView.replace("Recipes.qml")

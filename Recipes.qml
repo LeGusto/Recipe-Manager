@@ -1,9 +1,13 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import RecipeManager 1.0
+import AppTheme 1.0
 
 Page {
     title: "Recipe Cards"
+    background: Rectangle {
+        color: Theme.backgroundColor
+    }
 
     // Contains all the recipes
     ListModel {
@@ -92,15 +96,42 @@ Page {
         delegate: Item {
             width: ListView.view.width
             height: 120
-
+            property bool beingRemoved: false
+            id: delegateItem
             // Rectangle for the background of the info
             Rectangle {
                 width: parent.width - 30
                 height: parent.height
                 radius: 8
-                color: "white"
-                border.color: "#e0e0e0"
+                color: recipeMouseArea.containsMouse ? "#c1c1c1" : "white"
+                // border.color: "#e0e0e0"
+                border.color: "#FAD59A"
+                border.width: 2
                 anchors.horizontalCenter: parent.horizontalCenter
+
+                // Animations for properties
+                Behavior on color {
+                    ColorAnimation {
+                        duration: 150
+                    }
+                }
+                Behavior on opacity {
+                    NumberAnimation {
+                        duration: 200
+                    }
+                }
+                Behavior on height {
+                    NumberAnimation {
+                        duration: 300
+                        easing.type: Easing.InOutQuad
+                    }
+                }
+                Behavior on y {
+                    NumberAnimation {
+                        duration: 300
+                        easing.type: Easing.InOutQuad
+                    }
+                }
 
                 // Displays some info about the reipe
                 Column {
@@ -133,7 +164,10 @@ Page {
 
                 // Allows you to click the card to view a detailed version of the recipe
                 MouseArea {
+                    id: recipeMouseArea
                     anchors.fill: parent
+                    hoverEnabled: true
+                    cursorShape: Qt.PointingHandCursor
                     onClicked: {
                         stackView.push("ViewRecipe.qml", {
                                            "recipe": {
@@ -149,26 +183,58 @@ Page {
                 }
 
                 // Button for deleting the recipe
-                Button {
+                ButtonStyled1 {
                     anchors.right: parent.right
                     anchors.verticalCenter: parent.verticalCenter
                     width: 30
                     height: 30
                     text: "×"
+                    font.pixelSize: 20
                     onClicked: {
-                        AppCore.dbHandler.deleteRecipe(name)
-                        recipeModel.remove(index)
+                        beingRemoved = true
+                        removeTimer.start()
                     }
                 }
             }
+
+            // Timer to remove after animation completes
+            Timer {
+                id: removeTimer
+                interval: 300
+                onTriggered: {
+                    AppCore.dbHandler.deleteRecipe(name)
+                    recipeModel.remove(index)
+                }
+            }
+
+            // Animate other cards when this one is being removed
+            states: State {
+                when: beingRemoved
+                PropertyChanges {
+                    target: delegateItem
+                    opacity: 0
+                }
+                PropertyChanges {
+                    target: delegateItem
+                    height: 0
+                }
+            }
+
+            transitions: Transition {
+                NumberAnimation {
+                    properties: "opacity,height"
+                    duration: 300
+                }
+            }
         }
+
         footer: Item {
             height: 15
         }
     }
 
     // Button for logging out
-    header: Button {
+    header: NavButton {
         id: logoutBtn
         text: "Log Out"
         highlighted: true
@@ -181,10 +247,7 @@ Page {
     }
 
     // Button for adding a new recipe
-    footer: Button {
-        width: recipeListView.width - 30
-        height: 50
-        x: (recipeListView.width - width) / 2
+    footer: NavButton {
         text: "Add New Recipe"
         highlighted: true
 
