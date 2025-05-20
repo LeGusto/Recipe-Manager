@@ -134,7 +134,8 @@ Page {
             id: errorLabel
             color: "red"
             wrapMode: Text.Wrap
-
+            // style: Text.Outline
+            font.pixelSize: 16
             Layout.alignment: Qt.AlignHCenter
         }
     }

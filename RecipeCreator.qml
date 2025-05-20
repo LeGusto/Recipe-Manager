@@ -22,6 +22,7 @@ Page {
         id: stepComponent
 
         Rectangle {
+            id: stepRect
             property int stepNumber
             property string stepText
 
@@ -52,6 +53,12 @@ Page {
                     wrapMode: Text.Wrap
                     placeholderText: "Enter step..."
 
+                    // Behavior on Layout.preferredHeight {
+                    //     NumberAnimation {
+                    //         duration: 200
+                    //         easing.type: Easing.OutQuad
+                    //     }
+                    // }
                     Layout.preferredHeight: Math.max(60, contentHeight + 20)
 
                     background: Rectangle {
@@ -69,6 +76,23 @@ Page {
                     }
                 }
             }
+
+            // Fade in animation
+            opacity: 0
+
+            Behavior on opacity {
+                NumberAnimation {
+                    duration: 300
+                    easing.type: Easing.OutQuad
+                }
+            }
+            Behavior on color {
+                ColorAnimation {
+                    duration: 150
+                }
+            }
+
+            Component.onCompleted: opacity = 1
         }
     }
 
@@ -191,6 +215,7 @@ Page {
                 wrapMode: Text.Wrap
                 text: ""
                 visible: false
+                font.pixelSize: 16
 
                 Layout.alignment: Qt.AlignHCenter
             }
@@ -223,13 +248,23 @@ Page {
                     }
                     SpinBox {
                         id: hoursTime
+                        hoverEnabled: true
                         from: 0
                         to: 99
                         value: 0
 
                         background: Rectangle {
-                            color: hovered ? "#3E4143" : "#313435" // Subtle background color change
+                            border.color: "#FAD59A"
+                            border.width: 2
+                            color: parent.hovered ? "#3E4143" : "#313435" // Subtle background color change
                             radius: 4
+
+                            Behavior on color {
+                                ColorAnimation {
+                                    duration: 200 // Animation time in milliseconds
+                                    easing.type: Easing.InOutQuad // Smooth easing
+                                }
+                            }
                         }
                     }
                     Label {
@@ -238,13 +273,23 @@ Page {
                     }
                     SpinBox {
                         id: minutesTime
+                        hoverEnabled: true
                         from: 0
                         to: 59
                         value: 0
 
                         background: Rectangle {
-                            color: hovered ? "#3E4143" : "#313435" // Subtle background color change
+                            border.color: "#FAD59A"
+                            border.width: 2
+                            color: parent.hovered ? "#3E4143" : "#313435" // Subtle background color change
                             radius: 4
+
+                            Behavior on color {
+                                ColorAnimation {
+                                    duration: 200 // Animation time in milliseconds
+                                    easing.type: Easing.InOutQuad // Smooth easing
+                                }
+                            }
                         }
                     }
                 }
@@ -373,9 +418,25 @@ Page {
                     Layout.alignment: Qt.AlignHCenter
                     text: "- Remove Step"
                     onClicked: {
-                        if (steps.count > 0)
-                            steps.remove(steps.count - 1)
+                        if (steps.count > 0) {
+                            // var lastStep = stepsColumn.children[stepsColumn.children.length - 1]
+                            var lastLoader = null
+                            for (var i = stepsColumn.children.length - 1; i >= 0; i--) {
+                                if (stepsColumn.children[i] instanceof Loader) {
+                                    lastLoader = stepsColumn.children[i]
+                                    break
+                                }
+                            }
+                            lastLoader.item.opacity = 0
+                            removeTimer.start()
+                        }
                     }
+                }
+
+                Timer {
+                    id: removeTimer
+                    interval: 300 // Match animation duration
+                    onTriggered: steps.remove(steps.count - 1)
                 }
             }
         }

@@ -84,11 +84,12 @@ Page {
             }
         }
 
-        // Label used to display the error if signin fails
+        // Label used to display the error if login fails
         Label {
             id: errorLabel
             color: "red"
             wrapMode: Text.Wrap
+            font.pixelSize: 16
 
             Layout.alignment: Qt.AlignHCenter
         }
