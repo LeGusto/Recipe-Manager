@@ -2,6 +2,13 @@
 
 Recipe-Manager is a cross-platform recipe management application built using **C++** and **Qt/QML**. It allows users to create, view, and manage recipes with a user-friendly interface. The app integrates with **Firebase** for authentication and database management using REST APIs.
 
+<img src="https://github.com/user-attachments/assets/0de1c507-547b-4bd9-be60-4165f100ee1f" width="300" height="auto" alt="Title">
+<img src="https://github.com/user-attachments/assets/d8deade2-c867-440e-be55-1e310b9059ca" width="300" height="auto" alt="Sign up">
+<img src="https://github.com/user-attachments/assets/b38045c2-1c56-424f-afb4-92335f95186a" width="300" height="auto" alt="Log in">
+<img src="https://github.com/user-attachments/assets/68c44040-8a7e-47fc-90e9-f90f9aaaaa27" width="300" height="auto" alt="Recipes">
+<img src="https://github.com/user-attachments/assets/5de62e67-939c-404d-892d-556093fc6c25" width="300" height="auto" alt="Detailed view">
+<img src="https://github.com/user-attachments/assets/9bc16693-d99b-4a9c-9112-4d6a3ae9f750" width="300" height="auto" alt="Create recipe">
+
 ## Features
 
 - **User Authentication**: Sign up, log in, and log out functionality with Firebase Authentication.
