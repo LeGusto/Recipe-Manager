@@ -190,7 +190,11 @@ Page {
                 // Button for deleting the recipe
                 ButtonStyled1 {
                     anchors.right: parent.right
-                    anchors.verticalCenter: parent.verticalCenter
+                    anchors.rightMargin: 10
+                    anchors.top: parent.top
+                    anchors.topMargin: 10
+
+                    // anchors.verticalCenter: parent.verticalCenter
                     width: 30
                     height: 30
                     text: "×"

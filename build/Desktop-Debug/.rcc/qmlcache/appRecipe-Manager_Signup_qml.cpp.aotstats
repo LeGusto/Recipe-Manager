@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 16,
-                        "durationMicroseconds": 108,
+                        "durationMicroseconds": 239,
                         "errorMessage": "Cannot access value for name Settings",
                         "functionName": "color",
                         "line": 11
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 16,
-                        "durationMicroseconds": 685,
+                        "durationMicroseconds": 1453,
                         "errorMessage": "Cannot load property maxWidth from const QMetaObject.",
                         "functionName": "width",
                         "line": 19
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 77,
+                        "durationMicroseconds": 192,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 21
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 23,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 53,
                         "errorMessage": "Cannot retrieve a non-object type by ID: signupPage",
                         "functionName": "hasError",
                         "line": 29
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 77,
+                        "durationMicroseconds": 257,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 35
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 23,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 60,
                         "errorMessage": "Cannot retrieve a non-object type by ID: signupPage",
                         "functionName": "hasError",
                         "line": 43
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 65,
+                        "durationMicroseconds": 195,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 53
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 36,
-                        "durationMicroseconds": 3,
+                        "durationMicroseconds": 14,
                         "errorMessage": "Instruction \"generate_MoveRegExp\" not implemented",
                         "functionName": "regularExpression",
                         "line": 50
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 23,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 54,
                         "errorMessage": "Cannot retrieve a non-object type by ID: signupPage",
                         "functionName": "hasError",
                         "line": 62
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 93,
+                        "durationMicroseconds": 156,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 68
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 23,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 44,
                         "errorMessage": "Cannot retrieve a non-object type by ID: signupPage",
                         "functionName": "hasError",
                         "line": 77
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 86,
+                        "durationMicroseconds": 139,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 84
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 73,
+                        "durationMicroseconds": 117,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 89
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 147,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 142
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 67,
                         "errorMessage": "Cannot access value for name AppCore",
                         "functionName": "target",
                         "line": 148
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 51,
                         "errorMessage": "Cannot retrieve a non-object type by ID: signupButton",
                         "functionName": "onSignUpCompleted",
                         "line": 156
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 34,
                         "errorMessage": "Cannot retrieve a non-object type by ID: signupPage",
                         "functionName": "target",
                         "line": 166

@@ -26,7 +26,6 @@ Page {
             Layout.fillWidth: true
             id: emailField
             placeholderText: "Email"
-            text: "a@a.com"
             hasError: loginPage.showError
             onActiveFocusChanged: if (activeFocus) {
                                       loginPage.showError = false
@@ -41,7 +40,6 @@ Page {
             Layout.fillWidth: true
             id: passwordField
             placeholderText: "Password"
-            text: "aaaaaaaa"
             echoMode: TextInput.Password
             hasError: loginPage.showError
             onActiveFocusChanged: if (activeFocus) {

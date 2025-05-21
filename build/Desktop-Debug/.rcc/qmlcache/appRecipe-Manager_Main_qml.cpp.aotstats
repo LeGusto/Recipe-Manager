@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 73,
+                        "durationMicroseconds": 78,
                         "errorMessage": "Cannot access value for name AppCore",
                         "functionName": "target",
                         "line": 21
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 66,
+                        "durationMicroseconds": 68,
                         "errorMessage": "Cannot access value for name AppCore",
                         "functionName": "onAuthenticationChanged",
                         "line": 22
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 61,
+                        "durationMicroseconds": 56,
                         "errorMessage": "Cannot access value for name AppCore",
                         "functionName": "target",
                         "line": 32
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 51,
+                        "durationMicroseconds": 39,
                         "errorMessage": "Cannot retrieve a non-object type by ID: stackView",
                         "functionName": "onFetchRecipesSuccess",
                         "line": 33
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 45,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot retrieve a non-object type by ID: stackView",
                         "functionName": "onFetchRecipesFail",
                         "line": 37
