@@ -5,15 +5,15 @@ import QtQuick.Layouts 1.15
 Button {
     id: root
     background: Rectangle {
-        color: parent.hovered ? "#b37c11" : "#E9A319"
+        color: parent.enabled ? (parent.hovered ? "#b37c11" : "#E9A319") : "#b37c11"
         radius: 20
-        border.color: "#FAD59A"
+        border.color: parent.enabled ? "#FAD59A" : "#A86523"
         border.width: 2
 
         Behavior on color {
             ColorAnimation {
-                duration: 200 // Animation time in milliseconds
-                easing.type: Easing.InOutQuad // Smooth easing
+                duration: 200
+                easing.type: Easing.InOutQuad
             }
         }
 

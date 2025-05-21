@@ -32,7 +32,7 @@ qt_add_qml_module(appRecipe-Manager
         QML_FILES RecipeCreator.qml
         QML_FILES ViewRecipe.qml
         QML_FILES ButtonStyled1.qml
-        QML_FILES Theme.qml
+        QML_FILES Settings.qml
         RESOURCES
         RESOURCES
         SOURCES

@@ -20,8 +20,8 @@ set(src_and_dest_list
     "/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/Recipe-Manager/ViewRecipe.qml"
     "/home/LeGusto/Documents/Recipe-Manager/ButtonStyled1.qml"
     "/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/Recipe-Manager/ButtonStyled1.qml"
-    "/home/LeGusto/Documents/Recipe-Manager/Theme.qml"
-    "/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/Recipe-Manager/Theme.qml"
+    "/home/LeGusto/Documents/Recipe-Manager/Settings.qml"
+    "/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/Recipe-Manager/Settings.qml"
     "/home/LeGusto/Documents/Recipe-Manager/NavButton.qml"
     "/home/LeGusto/Documents/Recipe-Manager/build/Desktop-Debug/Recipe-Manager/NavButton.qml"
 

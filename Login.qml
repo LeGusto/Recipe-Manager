@@ -2,13 +2,13 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 import RecipeManager 1.0
-import AppTheme 1.0
+import AppSettings 1.0
 
 Page {
     id: loginPage
     title: "Login"
     background: Rectangle {
-        color: Theme.backgroundColor
+        color: Settings.backgroundColor
     }
 
     property bool showError: false
@@ -16,9 +16,10 @@ Page {
 
     ColumnLayout {
 
+        width: Math.min(Settings.maxWidth, parent.width * 0.8)
+
         anchors.centerIn: parent
         spacing: 20
-        width: parent.width * 0.8
 
         // Email input
         StyledTextField {
@@ -74,7 +75,8 @@ Page {
                 onClicked: {
                     onClicked: {
                         loginButton.enabled = false
-                        loginButton.text = "Processing..."
+                        backButton.enabled = false
+                        // loginButton.text = "Processing..."
                         AppCore.authHandler.signIn(emailField.text,
                                                    passwordField.text)
                     }
@@ -102,6 +104,7 @@ Page {
             showError = true
             errorLabel.text = error
             loginButton.enabled = true
+            backButton.enabled = true
             loginButton.text = "Login"
         }
     }

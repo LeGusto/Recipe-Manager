@@ -2,22 +2,24 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 import RecipeManager 1.0
-import AppTheme 1.0
+import AppSettings 1.0
 
 Page {
     id: signupPage
     title: "Sign Up"
     background: Rectangle {
-        color: Theme.backgroundColor
+        color: Settings.backgroundColor
     }
 
     property bool showError: false
     signal signupFailed(string errorMessage)
 
     ColumnLayout {
+
+        width: Math.min(Settings.maxWidth, parent.width * 0.8)
+
         anchors.centerIn: parent
         spacing: 20
-        width: parent.width * 0.8
 
         // Name input area
         StyledTextField {
@@ -121,8 +123,9 @@ Page {
                     }
 
                     signupButton.enabled = false
-                    signupButton.text = "Processing..."
+                    backButton.enabled = false
 
+                    // signupButton.text = "Processing..."
                     AppCore.authHandler.signUp(emailField.text,
                                                passwordField.text)
                 }
@@ -145,12 +148,14 @@ Page {
         target: AppCore.authHandler
         function onSignUpFailed(error) {
             signupButton.enabled = true
+            backButton.enabled = true
             signupButton.text = "Sign Up"
             signupFailed(error)
         }
 
         function onSignUpCompleted() {
             signupButton.enabled = true
+            backButton.enabled = true
             signupButton.text = "Sign Up"
             stackView.replace("Login.qml")
         }

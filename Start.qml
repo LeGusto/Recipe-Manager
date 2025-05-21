@@ -1,13 +1,13 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
-import AppTheme 1.0
+import AppSettings 1.0
 
 Page {
     id: startPage
     title: "Start"
     background: Rectangle {
-        color: Theme.backgroundColor
+        color: Settings.backgroundColor
     }
 
     ColumnLayout {

@@ -2,7 +2,7 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 import RecipeManager 1.0
-import AppTheme 1.0
+import AppSettings 1.0
 
 // Used by the user to create new recipes
 Page {
@@ -14,7 +14,7 @@ Page {
     property bool showError: false
 
     background: Rectangle {
-        color: Theme.backgroundColor
+        color: Settings.backgroundColor
     }
 
     // Structure of each step card
@@ -26,7 +26,8 @@ Page {
             property int stepNumber
             property string stepText
 
-            width: recipeCreatorPage.width * 0.9
+            width: formLayout.width
+
             height: rowLayout.implicitHeight + 20
             radius: 8
             color: "white"
@@ -131,9 +132,9 @@ Page {
                 }
 
                 contentItem: Text {
-                    text: "x"
+                    text: "X"
                     color: "red"
-                    font.pixelSize: 18
+                    font.pixelSize: 14
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                 }
@@ -163,17 +164,21 @@ Page {
     // Display all the input options
     ScrollView {
         anchors.fill: parent
+
+        anchors.centerIn: parent
+        // padding: 20
         padding: 20
-        contentWidth: parent.width * 0.9
+        contentWidth: parent.width - padding * 2
         contentHeight: formLayout.height
         ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
         ScrollBar.vertical.policy: ScrollBar.AlwaysOff
-
         ColumnLayout {
             id: formLayout
-            width: parent.width
+            width: Math.min(Settings.maxWidth, parent.width)
             spacing: 15
+            anchors.centerIn: parent
 
+            // anchors.horizontalCenter: parent.horizontalCenter
             Loader {
                 sourceComponent: nameLabelComponent
                 Layout.fillWidth: true
@@ -184,7 +189,8 @@ Page {
 
             // Name input
             Rectangle {
-                width: parent.width
+                // width: parent.width
+                Layout.fillWidth: true
                 height: 60
                 radius: 8
                 color: "white"
@@ -403,11 +409,12 @@ Page {
             // Buttons to manage steps (pop most recent step or add one step)
             RowLayout {
                 Layout.alignment: Qt.AlignHCenter
-                width: parent.width * 0.9
+                Layout.maximumWidth: Math.min(Settings.maxWidth * 0.6,
+                                              parent.width - 40)
                 spacing: 10
 
                 ButtonStyled1 {
-                    Layout.alignment: Qt.AlignHCenter
+                    // Layout.alignment: Qt.AlignHCenter
                     text: "+ Add Step"
                     onClicked: steps.append({
                                                 "stepText": ""
@@ -415,11 +422,10 @@ Page {
                 }
 
                 ButtonStyled1 {
-                    Layout.alignment: Qt.AlignHCenter
+                    // Layout.alignment: Qt.AlignHCenter
                     text: "- Remove Step"
                     onClicked: {
                         if (steps.count > 0) {
-                            // var lastStep = stepsColumn.children[stepsColumn.children.length - 1]
                             var lastLoader = null
                             for (var i = stepsColumn.children.length - 1; i >= 0; i--) {
                                 if (stepsColumn.children[i] instanceof Loader) {
@@ -435,7 +441,7 @@ Page {
 
                 Timer {
                     id: removeTimer
-                    interval: 300 // Match animation duration
+                    interval: 300
                     onTriggered: steps.remove(steps.count - 1)
                 }
             }

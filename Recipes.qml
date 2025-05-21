@@ -1,12 +1,12 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import RecipeManager 1.0
-import AppTheme 1.0
+import AppSettings 1.0
 
 Page {
     title: "Recipe Cards"
     background: Rectangle {
-        color: Theme.backgroundColor
+        color: Settings.backgroundColor
     }
 
     // Contains all the recipes
@@ -87,17 +87,21 @@ Page {
         model: recipeModel
         spacing: 10
         clip: true
+        width: Math.min(Settings.maxWidth, parent.width * 0.8)
         boundsBehavior: Flickable.StopAtBounds
 
         header: Item {
+            width: parent.width
             height: 15
         }
 
         delegate: Item {
-            width: ListView.view.width
+            id: delegateItem
+
+            width: Math.min(Settings.maxWidth, parent ? parent.width : 0)
+            anchors.horizontalCenter: parent ? parent.horizontalCenter : undefined
             height: 120
             property bool beingRemoved: false
-            id: delegateItem
             // Rectangle for the background of the info
             Rectangle {
                 width: parent.width - 30
@@ -138,6 +142,7 @@ Page {
                     anchors.fill: parent
                     anchors.margins: 10
                     spacing: 5
+                    width: parent.width
 
                     Text {
                         text: name

@@ -1,25 +1,27 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
-import AppTheme 1.0
+import AppSettings 1.0
 
 // Used for a detailed inspection of a recipe (when you click on a recipe card)
 Page {
     id: viewRecipePage
     property var recipe: ({})
     background: Rectangle {
-        color: Theme.backgroundColor
+        color: Settings.backgroundColor
     }
 
     ScrollView {
         anchors.fill: parent
         padding: 20
-        contentWidth: parent.width * 0.9
+        contentWidth: parent.width - padding * 2
         ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
         ScrollBar.vertical.policy: ScrollBar.AlwaysOff
 
         ColumnLayout {
             width: parent.width
+            anchors.fill: parent
+            anchors.horizontalCenter: parent.horizontalCenter
 
             // Padding at the top
             Item {
@@ -39,7 +41,8 @@ Page {
                 // Displays all the actual info
                 ColumnLayout {
                     id: itemsLayout
-                    width: parent.width
+                    width: Math.min(Settings.maxWidth, parent.width * 0.8)
+
                     anchors.fill: parent
                     anchors.margins: 10
                     spacing: 5

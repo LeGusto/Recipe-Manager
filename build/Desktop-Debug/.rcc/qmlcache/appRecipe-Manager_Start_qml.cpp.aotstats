@@ -6,15 +6,15 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 16,
-                        "durationMicroseconds": 148,
-                        "errorMessage": "Cannot access value for name Theme",
+                        "durationMicroseconds": 107,
+                        "errorMessage": "Cannot access value for name Settings",
                         "functionName": "color",
                         "line": 10
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 16,
-                        "durationMicroseconds": 214,
+                        "durationMicroseconds": 161,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 16
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 63,
+                        "durationMicroseconds": 43,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 14
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 91,
+                        "durationMicroseconds": 74,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 25
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 76,
+                        "durationMicroseconds": 69,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 30
