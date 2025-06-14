@@ -17,7 +17,6 @@ Recipe-Manager is a cross-platform recipe management application built using **C
   - View detailed recipes.
   - Delete recipes.
 - **Responsive UI**: Built with QML for a modern and responsive user interface.
-- **Cross-Platform**: Runs on Linux, Windows, and macOS.
 
 ## Setup and Installation
 
