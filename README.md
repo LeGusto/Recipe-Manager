@@ -42,23 +42,5 @@ Recipe-Manager is a cross-platform recipe management application built using **C
 3. Build the project:
    ```bash
    cmake --build build
-4. Set the environment variables:
-    - **Windows (CMD):**
-    ```bash
-    set FIREBASE_API_KEY=your_token_here
-    set FIREBASE_BASE_URL=your_token_here
-    ```
-    - **Windows (PowerShell):**
-    ```bash
-    $env:FIREBASE_API_KEY = "your_token_here"
-    $env:FIREBASE_BASE_URL = "your_token_here"
-    ```
-    - **Linux/macOS:**
-    ```bash
-    export FIREBASE_API_KEY=your_token_here
-    export FIREBASE_BASE_URL=your_token_here
-    ```
-5. Run the application:
-   ```bash
-   ./build/appRecipe-Manager
+
 
